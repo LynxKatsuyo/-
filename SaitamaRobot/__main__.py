@@ -51,13 +51,13 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hi {}, my name is {}! 
-I am an Anime themed group management bot. You can find my list of available commands with /help.
+Hi {}, my name is Setsuna ! Nyah! 
+I am an Anime themed group management bot. You can find my list of available commands with /help Nyah! 
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I help admins manage their groups with Bunny Girl Charm! 
+I help admins manage their groups with a Nyah! 
 
 *Main* commands available:
  • /help: PM's you this message.
