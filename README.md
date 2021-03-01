@@ -5,9 +5,9 @@
 
 A modular Telegram Python bot running on python3 with a sqlalchemy database and an entirely themed persona to make Mai suitable for Anime and Manga group chats. This is a fork of Saitama.
 
-Can be found on telegram as [Mai Sakurajima](https://t.me/SetsunyaBot).
+Can be found on telegram as [Setsuna](https://t.me/SetsunyaBot).
 
-The Support group can be reached out to at [Mai Support](https://t.me/MaiSakurajimaSupport), where you can ask for help about [Mai Sakurajima](https://t.me/Mai_Sakurajima_Robot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+The Support group can be reached out to at [Setsuna Support](https://t.me/MaiSakurajimaSupport), where you can ask for help about [Setsuna ](https://t.me/SetsunyaBot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 ## How to setup/deploy.
 
@@ -167,7 +167,7 @@ For queries or any issues regarding the bot please open an issue ticket or visit
 ## How to setup on Heroku 
 For starters click on this button 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Zack-Bloodshot/Setsuna.git ) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Zack-Bloodshot/Setsuna.git) 
 
 
 ## Credits
