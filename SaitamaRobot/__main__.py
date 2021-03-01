@@ -197,7 +197,7 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="☑️ Add Mai Sakurajima to your group",
+                            text="☑️ Add Setsuna to your group",
                             url="t.me/{}?startgroup=true".format(
                                 context.bot.username))
                     ],
@@ -210,9 +210,9 @@ def start(update: Update, context: CallbackContext):
                              url="https://github.com/Raki-12/Mai-Sakurajima")
                      ],
                      [
-                         InlineKeyboardButton(
-                             text="🥰 Wanna know who I am? 🥰",
-                             url="https://t.me/bunny_girl_senpai_sub")
+                         
+
+
                     ]]))
                   
                     
