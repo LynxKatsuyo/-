@@ -209,10 +209,11 @@ def start(update: Update, context: CallbackContext):
                              text="🔗 Source 🔗",
                              url="https://github.com/Zack-Bloodshot/Setsuna ")
                      ],
-                     [
-                         
-
-
+                     [   
+                        InlineKeyboardButton(
+                             text="🎆My Owner🎆", 
+                             url="https://t.me/DontKnowWhoRU") 
+                       
                     ]]))
                   
                     
