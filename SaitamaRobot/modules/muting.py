@@ -19,14 +19,14 @@ from telegram.utils.helpers import mention_html
 
 def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
     if not user_id:
-        reply = "You don't seem to be referring to a user or the ID specified is incorrect.."
+        reply = "Meoww.... You don't seem to be referring to a kitty or the ID specified is incorrect.."
         return reply
 
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message == "User not found":
-            reply = "I can't seem to find this user"
+            reply = "I can't seem to find this kitty"
             return reply
         else:
             raise
@@ -78,12 +78,12 @@ def mute(update: Update, context: CallbackContext) -> str:
         bot.restrict_chat_member(chat.id, user_id, chat_permissions)
         bot.sendMessage(
             chat.id,
-            f"Taped <b>{html.escape(member.user.first_name)}</b> into <b>FOREVERNESS</b>",
+            f"Taped <b>{html.escape(member.user.first_name)}</b> into FOREVERNESS",
             parse_mode=ParseMode.HTML)
         return log
 
     else:
-        message.reply_text("This Kitty is already taped!, he is crawling trying to speak.")
+        message.reply_text("This Kitty is already taped!, he is crawling trying to speak..... ")
 
     return ""
 
@@ -130,7 +130,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
                 pass
             bot.sendMessage(
                 chat.id,
-                f"I shall allow <b>{html.escape(member.user.first_name)}</b> to text!",
+                f"Ahh wait im removing <b>{html.escape(member.user.first_name)}'s</b> Tape!",
                 parse_mode=ParseMode.HTML)
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
