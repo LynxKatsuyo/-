@@ -67,10 +67,10 @@ def check_flood(update, context) -> str:
                 user.id,
                 until_date=mutetime,
                 permissions=ChatPermissions(can_send_messages=False))
-            execstrings = ("Muted for {}".format(getvalue))
+            execstrings = ("Now stay taped {}".format(getvalue))
             tag = "TMUTE"
         send_message(update.effective_message,
-                     "Beep Boop! Boop Beep!\n{}!".format(execstrings))
+                     "Meow.. You won't lose your virginity by fukking this group... \n{}!".format(execstrings))
 
         return "<b>{}:</b>" \
                "\n#{}" \
