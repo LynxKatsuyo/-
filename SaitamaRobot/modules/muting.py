@@ -32,7 +32,7 @@ def check_user(user_id: int, bot: Bot, chat: Chat) -> Optional[str]:
             raise
 
     if user_id == bot.id:
-        reply = "I'm not gonna MUTE myself, How high are you?"
+        reply = "Why the.....meow!! How high are you?! meow!! "
         return reply
 
     if is_user_admin(chat, user_id, member) or user_id in TIGERS:
@@ -78,12 +78,12 @@ def mute(update: Update, context: CallbackContext) -> str:
         bot.restrict_chat_member(chat.id, user_id, chat_permissions)
         bot.sendMessage(
             chat.id,
-            f"Muted <b>{html.escape(member.user.first_name)}</b> with no expiration date!",
+            f"Taped <b>{html.escape(member.user.first_name)}</b> into <b>FOREVERNESS</b>",
             parse_mode=ParseMode.HTML)
         return log
 
     else:
-        message.reply_text("This user is already muted!")
+        message.reply_text("This Kitty is already taped!, he is crawling trying to speak.")
 
     return ""
 
@@ -102,7 +102,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
     user_id = extract_user(message, args)
     if not user_id:
         message.reply_text(
-            "You'll need to either give me a username to unmute, or reply to someone to be unmuted."
+            "Meowwww..... You'll need to either give me a username to unmute, or reply to someone to be unmuted."
         )
         return ""
 
@@ -112,7 +112,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
         if (member.can_send_messages and member.can_send_media_messages and
                 member.can_send_other_messages and
                 member.can_add_web_page_previews):
-            message.reply_text("This user already has the right to speak.")
+            message.reply_text("This kitty already has the right to speak.")
         else:
             chat_permissions = ChatPermissions(
                 can_send_messages=True,
@@ -140,7 +140,7 @@ def unmute(update: Update, context: CallbackContext) -> str:
             )
     else:
         message.reply_text(
-            "This user isn't even in the chat, unmuting them won't make them talk more than they "
+            "This kitty isn't even in the chat, unmuting them won't make them talk more than they "
             "already do!")
 
     return ""
@@ -169,7 +169,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
 
     if not reason:
         message.reply_text(
-            "You haven't specified a time to mute this user for!")
+            "Nyahh... You haven't specified a time to mute this user for!")
         return ""
 
     split_reason = reason.split(None, 1)
@@ -201,11 +201,11 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
                 chat.id, user_id, chat_permissions, until_date=mutetime)
             bot.sendMessage(
                 chat.id,
-                f"Muted <b>{html.escape(member.user.first_name)}</b> for {time_val}!",
+                f"Taped <b>{html.escape(member.user.first_name)}</b> for {time_val}! I hope he uses it for some meaningfull task... ",
                 parse_mode=ParseMode.HTML)
             return log
         else:
-            message.reply_text("This user is already muted.")
+            message.reply_text("This Kitty is already muted.")
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
@@ -216,7 +216,7 @@ def temp_mute(update: Update, context: CallbackContext) -> str:
             LOGGER.warning(update)
             LOGGER.exception("ERROR muting user %s in chat %s (%s) due to %s",
                              user_id, chat.title, chat.id, excp.message)
-            message.reply_text("Well damn, I can't mute that user.")
+            message.reply_text("Well babes, I can't mute that user.")
 
     return ""
 
