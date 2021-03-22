@@ -41,7 +41,7 @@ def blacklist(update, context):
             chat_id = update.effective_chat.id
             chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "Current cursed words in <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -57,11 +57,11 @@ def blacklist(update, context):
 
     split_text = split_message(filter_list)
     for text in split_text:
-        if filter_list == "Current blacklisted words in <b>{}</b>:\n".format(
+        if filter_list == "Current cursed words in <b>{}</b>:\n".format(
                 html.escape(chat_name)):
             send_message(
                 update.effective_message,
-                "No blacklisted words in <b>{}</b>!".format(
+                "No cursed words in <b>{}</b>!".format(
                     html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
@@ -101,7 +101,7 @@ def add_blacklist(update, context):
         if len(to_blacklist) == 1:
             send_message(
                 update.effective_message,
-                "Added blacklist <code>{}</code> in chat: <b>{}</b>!".format(
+                "<code>{}</code> was cursed in chat: <b>{}</b>!".format(
                     html.escape(to_blacklist[0]), html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
@@ -109,7 +109,7 @@ def add_blacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Added blacklist trigger: <code>{}</code> in <b>{}</b>!".format(
+                "Added cursed word: <code>{}</code> in <b>{}</b>!".format(
                     len(to_blacklist), html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
@@ -117,7 +117,7 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to add in blacklist.",
+            "Tell me which words you would like to Curse.",
         )
 
 
@@ -157,19 +157,19 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from blacklist in <b>{}</b>!"
+                    "Removed <code>{}</code> cursed words<b>{}</b>!"
                     .format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)),
                     parse_mode=ParseMode.HTML,
                 )
             else:
                 send_message(update.effective_message,
-                             "This is not a blacklist trigger!")
+                             "This is not a cursed word!!")
 
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "Removed <code>{}</code> from cursed words in<b>{}</b>!".format(
                     successful, html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
@@ -177,7 +177,7 @@ def unblacklist(update, context):
         elif not successful:
             send_message(
                 update.effective_message,
-                "None of these triggers exist so it can't be removed.".format(
+                "None of these curse triggers exist so it can't be removed.".format(
                     successful,
                     len(to_unblacklist) - successful),
                 parse_mode=ParseMode.HTML,
@@ -186,7 +186,7 @@ def unblacklist(update, context):
         else:
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist. {} did not exist, "
+                "Removed <code>{}</code> from cursed words. {} did not exist, "
                 "so were not removed.".format(successful,
                                               len(to_unblacklist) - successful),
                 parse_mode=ParseMode.HTML,
@@ -194,7 +194,7 @@ def unblacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to remove from blacklist!",
+            "Tell me which words you would like to remove from cursed words!",
         )
 
 
@@ -276,7 +276,7 @@ Examples of time value: 4m = 4 minutes, 3h = 3 hours, 6d = 6 days, 5w = 5 weeks.
                 send_message(
                     update.effective_message, teks, parse_mode="markdown")
                 return ""
-            settypeblacklist = "temporarily mute for {}".format(args[1])
+            settypeblacklist = "temporarily taped for {}".format(args[1])
             sql.set_blacklist_strength(chat_id, 7, str(args[1]))
         else:
             send_message(
@@ -379,7 +379,7 @@ def del_blacklist(update, context):
                     )
                     bot.sendMessage(
                         chat.id,
-                        f"Muted {user.first_name} for using Blacklisted word: {trigger}!",
+                        f"Taped {user.first_name} for using cursed word: {trigger}!",
                     )
                     return
                 elif getmode == 4:
@@ -388,7 +388,7 @@ def del_blacklist(update, context):
                     if res:
                         bot.sendMessage(
                             chat.id,
-                            f"Kicked {user.first_name} for using Blacklisted word: {trigger}!",
+                            f"Kicked {user.first_name} for using Cursed word: {trigger}!",
                         )
                     return
                 elif getmode == 5:
@@ -396,7 +396,7 @@ def del_blacklist(update, context):
                     chat.kick_member(user.id)
                     bot.sendMessage(
                         chat.id,
-                        f"Banned {user.first_name} for using Blacklisted word: {trigger}",
+                        f"Banned {user.first_name} for using Cursed word: {trigger}",
                     )
                     return
                 elif getmode == 6:
@@ -405,7 +405,7 @@ def del_blacklist(update, context):
                     chat.kick_member(user.id, until_date=bantime)
                     bot.sendMessage(
                         chat.id,
-                        f"Banned {user.first_name} until '{value}' for using Blacklisted word: {trigger}!",
+                        f"Banned {user.first_name} until '{value}' for using Cursed word: {trigger}!",
                     )
                     return
                 elif getmode == 7:
@@ -419,7 +419,7 @@ def del_blacklist(update, context):
                     )
                     bot.sendMessage(
                         chat.id,
-                        f"Muted {user.first_name} until '{value}' for using Blacklisted word: {trigger}!",
+                        f"Taped {user.first_name} until '{value}' for using Cursed word: {trigger}!",
                     )
                     return
             except BadRequest as excp:
