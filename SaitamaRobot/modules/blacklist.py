@@ -157,7 +157,7 @@ def unblacklist(update, context):
             if successful:
                 send_message(
                     update.effective_message,
-                    "Removed <code>{}</code> from the Setsuna curse <b>{}</b>!"
+                    "Removed <code>{}</code> from the curse in <b>{}</b>!"
                     .format(
                         html.escape(to_unblacklist[0]), html.escape(chat_name)),
                     parse_mode=ParseMode.HTML,
@@ -169,7 +169,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from the setsuna curse!!".format(
+                "Removed <code>{}</code> from the curse!!".format(
                     successful, html.escape(chat_name)),
                 parse_mode=ParseMode.HTML,
             )
