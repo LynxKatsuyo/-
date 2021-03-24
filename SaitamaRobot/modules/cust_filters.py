@@ -71,6 +71,8 @@ def list_handlers(update, context):
             filter_list = "*Filters in {}*:\n"
 
     all_handlers = sql.get_chat_triggers(chat_id)
+    totalf = sql.get_chat_triggers(chat_id)
+    filter_list += "Total Filters:" totalf
 
     if not all_handlers:
         send_message(update.effective_message,
