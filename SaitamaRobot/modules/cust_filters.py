@@ -87,7 +87,7 @@ def list_handlers(update, context):
                 filter_list.format(chat_name),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
-            filter_list = entry
+            filter_list += entry
         else:
             filter_list += entry
 
