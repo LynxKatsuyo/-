@@ -8,9 +8,9 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 
 @run_async
-async def neko(hex):
+def neko(hex):
     chat = "@TheChizuruBot"
-    async with hex.client.conversation(chat) as conv:
+    with hex.client.conversation(chat) as conv:
         start_msg = await conv.send_message("/start")
         await conv.get_response()
         await conv.send_message("/neko" )
