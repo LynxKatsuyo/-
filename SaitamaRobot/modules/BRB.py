@@ -59,7 +59,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
             options = ['{} is here!! Yayy!!!', '{} is awake!! kek!!', '{} r u feeling good now? Meow!!' , 
                        'A huge meteor..... oh no thts {} Nyahh!! ', '{}-kun pops outta nowhere, Nyah!!' , 
                        ' Intensity Intensifies as {} is here!!!',
-                       '{}-kun i saw u were sleeping with a bot!!! kek!!!'
+                       '{}-kun i saw u were sleeping with a bot!!! kek!!!', 'unoo.... eto... {} KuN! i s here!!! meowww!!' 
                       ] 
 
 
