@@ -73,16 +73,16 @@ def ban(update: Update, context: CallbackContext) -> str:
             )
         elif user_id in DEMONS:
             message.reply_text(
-                "If i kill him TrySweet sama will be angry nyahhh!!."
+                "If i kill that user TrySweet sama will be angry nyahhh!!."
             )
         elif user_id in TIGERS:
             message.reply_text(
                 "TrySweet sama is watching i can't do that!! ."
             )
         elif user_id in WOLVES:
-            message.reply_text("He is foreverness, TrySweet sama gave him powers.")
+            message.reply_text("That is foreverness, TrySweet sama gave him powers.")
         else:
-            message.reply_text("This user has immunity and cannot be banned.")
+            message.reply_text("This user has a shield that i can't destroy... ")
         return log_message
     if message.text.startswith("/s"):
         silent = True
@@ -110,8 +110,8 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>❕</code><b>Ban Event</b>\n"
-            f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+            f"<code>❕</code><b>Ban Carnival</b>\n"
+            f"<code> </code><b>•  The prey:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
             reply += f"\n<code> </code><b>•  Reason:</b> \n{html.escape(reason)}"
