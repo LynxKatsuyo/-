@@ -27,10 +27,10 @@ from telegram.utils.helpers import mention_html
 
 @run_async
 def tts(update: Update, context: CallbackContext):
-    reply = update.effective_message 
+    msg = update.effective_message 
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
     filename = datetime.now().strftime("%d%m%y-%H%M%S%f")
-  
+    reply = " ".join(msg) 
     
 
     if reply:
