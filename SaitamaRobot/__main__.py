@@ -212,7 +212,7 @@ def start(update: Update, context: CallbackContext):
                      [   
                         InlineKeyboardButton(
                              text="HELP", 
-                             callback_data="send_help") 
+                             callback_data="help") 
                        
                     ]]))
                   
