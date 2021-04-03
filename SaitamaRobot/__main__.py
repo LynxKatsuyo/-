@@ -151,6 +151,7 @@ def test(update: Update, context: CallbackContext):
 
 @run_async
 def start(update: Update, context: CallbackContext):
+    keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
@@ -212,7 +213,7 @@ def start(update: Update, context: CallbackContext):
                      [   
                         InlineKeyboardButton(
                              text="HELP", 
-                             callback_data="help") 
+                             callback_data=keyboard) 
                        
                     ]]))
                   
