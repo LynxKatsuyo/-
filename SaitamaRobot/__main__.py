@@ -206,13 +206,15 @@ def start(update: Update, context: CallbackContext):
                              text="🚨 Support 🚨",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🔗 Source 🔗",
-                             url="https://t.me/biriyanikhaa ")
+                             text="🎆My Owner🎆", 
+
+                             url="https://t.me/DontKnowWhoRU
                      ],
                      [   
                         InlineKeyboardButton(
-                             text="🎆My Owner🎆", 
-                             url="https://t.me/DontKnowWhoRU") 
+                             text="HELP",
+
+                             callback_data = "help") 
                        
                     ]]))
                   
