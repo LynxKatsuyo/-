@@ -37,24 +37,25 @@ def warn(user: User,
          message: Message,
          warner: User = None) -> str:
     if is_user_admin(chat, user.id):
-        message.reply_text("Damn admins, They are too far to be eliminated!")
+        message.reply_text("Nyah!! admins, They are too far to be eliminated!")
         return
 
     if user.id in TIGERS:
         if warner:
-            message.reply_text("Tigers cant be warned.")
+            message.reply_text("Blades cant be warned.")
         else:
             message.reply_text(
-                "Tiger triggered an auto warn filter!\n I can't warn tigers but they should avoid abusing this."
+                "Nyah a blade triggered an auto warn filter!\n I can't warn balde but trysweet sama is watching!! "
             )
         return
 
     if user.id in WOLVES:
         if warner:
-            message.reply_text("Wolf disasters are warn immune.")
+            message.reply_text("This kitty has a shield given by trysweet sama?!") 
+
         else:
             message.reply_text(
-                "Wolf Disaster triggered an auto warn filter!\nI can't warn wolves but they should avoid abusing this."
+                " A shield user triggered an auto warn filter!\nI can't warn them but they should avoid abusing this."
             )
         return
 
@@ -77,8 +78,8 @@ def warn(user: User,
         else:  # ban
             chat.kick_member(user.id)
             reply = (
-                f"<code>❕</code><b>Ban Event</b>\n"
-                f"<code> </code><b>•  User:</b> {mention_html(user.id, user.first_name)}\n"
+                f"<code>❕</code><b>Ban Carnival</b>\n"
+                f"<code> </code><b>•  The Prey:</b> {mention_html(user.id, user.first_name)}\n"
                 f"<code> </code><b>•  Count:</b> {limit}")
 
         for warn_reason in reasons:
@@ -96,7 +97,7 @@ def warn(user: User,
     else:
         keyboard = InlineKeyboardMarkup([[
             InlineKeyboardButton(
-                "🔘 Remove warn", callback_data="rm_warn({})".format(user.id))
+                "🔘 Release warn", callback_data="rm_warn({})".format(user.id))
         ]])
 
         reply = (
@@ -143,7 +144,7 @@ def button(update: Update, context: CallbackContext) -> str:
         res = sql.remove_warn(user_id, chat.id)
         if res:
             update.effective_message.edit_text(
-                "Warn removed by {}.".format(
+                "Warn released by {}, {} is a good person Nyah!! ".format(
                     mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML)
             user_member = chat.get_member(user_id)
@@ -189,7 +190,7 @@ def warn_user(update: Update, context: CallbackContext) -> str:
         else:
             return warn(chat.get_member(user_id).user, chat, reason, message, warner)
     else:
-        message.reply_text("That looks like an invalid User ID to me.")
+        message.reply_text("I don't think that organism exists... ")
     return ""
 
 @run_async
@@ -209,18 +210,18 @@ def rmwarn_cmd(update: Update, context: CallbackContext) -> str:
             limit, soft_warn = sql.get_warn_setting(chat.id)
             keyboard = InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                  "Remove warn", callback_data="rm_warn({})".format(user_id))
+                  "Release warn", callback_data="rm_warn({})".format(user_id))
             ]])
-            reply_text = f"This user has {num_warns}/{limit} warns."
+            reply_text = f"Meow.. This user has {num_warns}/{limit} warns."
             try:
                 message.reply_text(reply_text, reply_markup=keyboard)
             except BadRequest as err:
                 message.reply_text(
                   reply_text, reply_markup=keyboard, quote=False)
         else:
-            message.reply_text("This user doesn't have any warns.")
+            message.reply_text("Keko!! This user doesn't have any warns.")
     else:
-        message.reply_text("No user has been mentioned.")
+        message.reply_text("Nya! No user has been mentioned.")
     return ""
 
 @run_async
@@ -270,10 +271,10 @@ def warns(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(msg)
         else:
             update.effective_message.reply_text(
-                f"User has {num_warns}/{limit} warns, but no reasons for any of them."
+                f"User has {num_warns}/{limit} warns, but no reasons for any of them, i guess user has some bad relationship.... ."
             )
     else:
-        update.effective_message.reply_text("This user doesn't have any warns!")
+        update.effective_message.reply_text("Nya! This user doesn't have any warns!")
 
 
 # Dispatcher handler stop - do not async
@@ -413,7 +414,7 @@ def set_warn_limit(update: Update, context: CallbackContext) -> str:
                 msg.reply_text("The minimum warn limit is 3!")
             else:
                 sql.set_warn_limit(chat.id, int(args[0]))
-                msg.reply_text("Updated the warn limit to {}".format(args[0]))
+                msg.reply_text("Updated the warn limit to {}, if someone passes that, that user will fuk himself up!! nya!! ".format(args[0]))
                 return (
                     f"<b>{html.escape(chat.title)}:</b>\n"
                     f"#SET_WARN_LIMIT\n"
@@ -439,11 +440,11 @@ def set_warn_strength(update: Update, context: CallbackContext):
     if args:
         if args[0].lower() in ("on", "yes"):
             sql.set_warn_strength(chat.id, False)
-            msg.reply_text("Too many warns will now result in a Ban!")
+            msg.reply_text("Too many warns will now result in a Ban Carnival!!, fireworks everywhere!! ")
             return (
                 f"<b>{html.escape(chat.title)}:</b>\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Has enabled strong warns. Users will be seriously punched.(banned)"
+                f"Has enabled strong warns. Users will be made into rockets and launched away from the group!! Dam Fireworks everywhere!! "
             )
 
         elif args[0].lower() in ("off", "no"):
