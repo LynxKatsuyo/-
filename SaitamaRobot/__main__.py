@@ -213,14 +213,14 @@ def start(update: Update, context: CallbackContext):
                      [   
                         InlineKeyboardButton(
                              text="HELP", 
-                             callback_data=keyboard) 
+                             callback_data=send_help(update.effective_chat_id)) 
                        
                     ]]))
                   
                     
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
+            "Meow Meow!! \n<b>I Haven't napped since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
