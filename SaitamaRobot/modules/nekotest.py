@@ -11,6 +11,7 @@ def neko(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     chat = update.effective_chat
     nek = nekos.img("neko")
+    nek = nek.replace("\\", "") 
     bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
    
   
