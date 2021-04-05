@@ -6,6 +6,7 @@ from telegram.ext import CallbackContext, run_async
 
 
 def neko(update: Update, context: CallbackContext ):
+    bot = context.bot
     msg = update.effective_message
     user = update.effective_message.message_id
     chat = update.effective_chat
