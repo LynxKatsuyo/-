@@ -11,7 +11,7 @@ def sologif(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     chat = update.effective_chat.id
     nek = nekos.img("solog")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
    
 @run_async 
 def feet(update: Update, context: CallbackContext ):
@@ -29,7 +29,7 @@ def feetgif(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     chat = update.effective_chat.id
     nek = nekos.img("feetg")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
       
 @run_async 
 def cumgif(update: Update, context: CallbackContext ):
@@ -38,7 +38,7 @@ def cumgif(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     chat = update.effective_chat.id
     nek = nekos.img("cumg")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
       
 @run_async 
 def erokemo(update: Update, context: CallbackContext ):
@@ -56,7 +56,7 @@ def lesbian(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     chat = update.effective_chat.id
     nek = nekos.img("les")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
       
   
 SOLOGIF_HANDLER = DisableAbleCommandHandler("sologif", sologif)
