@@ -12,6 +12,7 @@ def wallpaper(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
     nek = nekos.img("wallpaper")
     bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_document(chat_id = chat, document = nek, filename = "wall_generation", reply_to_message_id = user) 
    
 @run_async 
 def lewdk(update: Update, context: CallbackContext ):
