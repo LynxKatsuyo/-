@@ -28,7 +28,7 @@ def cumpic(update: Update, context: CallbackContext ):
     msg = update.effective_message
     user = update.effective_message.message_id
     chat = update.effective_chat.id
-    nek = nekos.img("cumpic")
+    nek = nekos.img("cum_jpg")
     bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
       
 @run_async 
