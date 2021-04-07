@@ -10,14 +10,14 @@ neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'solog', 'fe
 
 @run_async
 def random(update: Update, context: CallbackContext ):
-    msg = update.effective_message
+    msg = update.effective_message.id
     bot = context.bot 
     user = update.effective_user.id
     chat = update.effective_chat.id
     kek = rdm.choice(neko)
     nek = nekos.img(kek)
     if nek.endswith("gif"):
-        bot.send_animation(chat_id =chat, animation = nek, reply_to_message_id =user )
+        bot.send_animation(chat_id =chat, animation = nek, reply_to_message_id = msg )
     else:
         bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
    
