@@ -20,7 +20,7 @@ def random(update: Update, context: CallbackContext ):
     else:
         bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
    
-RANDOM_HANDLER = DisableAbleCommandHandler("letsfap, random", random)
+RANDOM_HANDLER = DisableAbleCommandHandler("letsfap", random)
 dispatcher.add_handler(RANDOM_HANDLER)
  
 
