@@ -11,6 +11,7 @@ neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'solog', 'fe
 @run_async
 def random(update: Update, context: CallbackContext ):
     msg = update.effective_message
+    bot = context.bot 
     user = update.effective_user
     chat = update.effective_chat.id
     kek = rdm.choice(neko)
