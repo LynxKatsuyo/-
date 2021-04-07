@@ -12,7 +12,7 @@ neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'solog', 'fe
 def random(update: Update, context: CallbackContext ):
     msg = update.effective_message
     bot = context.bot 
-    user = update.effective_user
+    user = update.effective_user.id
     chat = update.effective_chat.id
     kek = rdm.choice(neko)
     nek = nekos.img(kek)
