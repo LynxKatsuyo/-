@@ -1,4 +1,4 @@
-import random
+import random as rdm
 import nekos 
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
@@ -13,7 +13,7 @@ def random(update: Update, context: CallbackContext ):
     msg = update.effective_message
     user = update.effective_user
     chat = update.effective_chat.id
-    kek = random.choice(neko)
+    kek = rdm.choice(neko)
     nek = nekos.img(kek)
     if nek.endswith("gif"):
         bot.send_animation(chat_id =chat, animation = nek, reply_to_message_id =user )
