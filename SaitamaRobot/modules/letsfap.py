@@ -19,7 +19,7 @@ def random(update: Update, context: CallbackContext ):
     if nek.endswith("gif"):
         bot.send_animation(chat_id =chat, animation = nek, reply_to_message_id = msg )
     else:
-        bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+        bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = msg)
    
 RANDOM_HANDLER = DisableAbleCommandHandler("letsfap", random)
 dispatcher.add_handler(RANDOM_HANDLER)
