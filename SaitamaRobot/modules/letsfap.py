@@ -10,7 +10,7 @@ neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'solog', 'fe
 
 @run_async
 def random(update: Update, context: CallbackContext ):
-    msg = update.effective_message.id
+    msg = update.effective_message.message_id
     bot = context.bot 
     user = update.effective_user.id
     chat = update.effective_chat.id
