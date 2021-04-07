@@ -31,4 +31,4 @@ alphabet_detector
 pyrate-limiter
 cachetools
 nekos.py
-random2
+random
