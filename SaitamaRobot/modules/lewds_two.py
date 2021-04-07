@@ -37,7 +37,7 @@ def cumgif(update: Update, context: CallbackContext ):
     msg = update.effective_message
     user = update.effective_message.message_id
     chat = update.effective_chat.id
-    nek = nekos.img("cumg")
+    nek = nekos.img("cum")
     bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
       
 @run_async 
