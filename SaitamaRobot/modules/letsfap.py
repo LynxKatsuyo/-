@@ -1,4 +1,4 @@
-import random2
+import random
 import nekos 
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
