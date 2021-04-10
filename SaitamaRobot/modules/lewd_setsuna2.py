@@ -52,4 +52,4 @@ __help__ = """
  - /baka: "Omae wa baka desu!!" 
  """
 __mod_name__ = "LEWDS"
-__command_list__ = nekkoo
+
