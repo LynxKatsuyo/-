@@ -7,7 +7,8 @@ from telegram.ext import CallbackContext, run_async
 neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'erokemo', 'lewdk', 'ngif', 'tickle', 'lewd', 'feed', 'eroyuri', 'eron', 'bj', 'solo', 'kemonomimi', 'gasm', 'poke', 'anal', 'hentai', 'erofeet', 'holo' 'blowjob', 'pussy', 'tits', 'holoero','pwankg', 'classic', 'kuni', 'waifu', 'pat', '8ball', 'kiss', 'femdom', 'neko', 'spank', 'cuddle', 'erok', 'boobs', 'smallboobs', 'hug', 'ero', 'smug','baka', 'woof']
 
 @run_async
-def lewd_setsuna(update: Update, context: ):
+def lewd_setsuna(update: Update, context: CallbackContext ):
+  bot = context.bot 
   msg = update.effective_message 
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id
