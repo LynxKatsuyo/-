@@ -9,7 +9,7 @@ neko = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'erokemo', '
 @run_async
 def lewd_setsuna(update: Update, context: CallbackContext ):
   bot = context.bot 
-  msg = update.effective_message 
+  msg = str(update.effective_message) 
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id
   msgs = msg.replace("/"," ")
