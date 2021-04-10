@@ -100,7 +100,7 @@ def boobs(update: Update, context: CallbackContext ):
     msg = update.effective_message
     user = update.effective_message.message_id
     chat = update.effective_chat.id
-    nek = nekos.img("tits")
+    nek = nekos.img("boobs")
     bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
 
 run_async 
