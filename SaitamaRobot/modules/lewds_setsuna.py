@@ -48,7 +48,7 @@ nekkoo = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'erokemo',
 
 
 NEKOS_HANDLER = DisableAbleCommandHandler(nekkoo, lewd_setsuna)
-dispatcher.add_handler(NEKO_HANDLER)
+dispatcher.add_handler(NEKOS_HANDLER)
 
 __help__ = """
 
