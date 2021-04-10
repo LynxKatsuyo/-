@@ -1,6 +1,6 @@
 
-__help__ = 
-"""
+__help__ = """
+
 
 - /boobs: the balloons that boys like!! 
  - /neko: neko neko ni!! cats like me!! 
