@@ -50,9 +50,9 @@ nekkoo = ['feet', 'yuri', 'trap', 'futanari', 'hololewd', 'lewdkemo', 'erokemo',
 NEKOS_HANDLER = DisableAbleCommandHandler(nekkoo, lewd_setsuna)
 dispatcher.add_handler(NEKO_HANDLER)
 
-__help__ = 
-"""
-Here is the help for the Lewd module:
+__help__ = """
+
+*Here is the help for the Lewd module:*
 
 - /boobs: the balloons that boys like!! 
 - /smallboobs: Some love them!! not huge... 
