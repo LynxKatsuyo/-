@@ -22,8 +22,9 @@ def nsfw(update: Update, context: CallbackContext ):
   msgs = update.effective_message 
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
+  chatto = update.effective_chat 
   chat = update.effective_chat.id 
-  if chat.type == "private":
+  if chatto.type == "private":
     msgs.reply_text(chat_id = chat, text = "Nsfw is always on in private chats my dear..") 
     return
   if chat in ChatOff:
