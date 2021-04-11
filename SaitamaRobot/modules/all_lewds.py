@@ -10,11 +10,14 @@ NSFW = "True"
 
 @run_async 
 def nsfw(update: Update, context: CallbackContext ):
+  global NSFW
   Status = "On!!" 
   bot = context.bot
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id 
+  args = " " 
+  ItsTime = " " 
   if len(msg) >= 2:
     args = msg[1]
   else:
