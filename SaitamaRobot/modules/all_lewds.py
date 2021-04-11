@@ -28,10 +28,10 @@ def nsfw(update: Update, context: CallbackContext ):
     bot.send_message(chat_id = chat, text = "Uhk Nsfw isn't allowed in this chat now.. Mewo!!", reply_to_message_id= msg_id )
   else:
     bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! ", reply_to_message_id = msg_id )
- if ItsTime == True:
-   bot.send_message(chat_id = chat, text = "Nsfw in this chat is {}.format(Status)", reply_to_message_id = msg_id )
- else:
-   pass
+  if ItsTime == True:
+    bot.send_message(chat_id = chat, text = "Nsfw in this chat is {}.format(Status)", reply_to_message_id = msg_id )
+  else:
+    pass
   
 @run_async 
 def neko(update: Update, context: CallbackContext ):
