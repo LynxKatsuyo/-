@@ -4,8 +4,8 @@ from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-SAYON = ['yes', 'Yes', 'YES']
-SAYNO = ['no', 'No', 'NO' ]
+SAYON = ['yes', 'Yes', 'YES', 'on', 'On', 'ON']
+SAYNO = ['no', 'No', 'NO', 'Off', 'off', 'OFF' ]
 ChatOff = []
 NSFW = "True "
 @run_async 
@@ -38,7 +38,7 @@ def nsfw(update: Update, context: CallbackContext ):
   elif args in SAYNO:
     if not chat in ChatOff:
       appe = ChatOff.append(chat)
-      bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! ", reply_to_message_id = msg_id )
+      bot.send_message(chat_id = chat, text = "Uhk Nsfw is off now!! Mewow!! ", reply_to_message_id = msg_id )
       Status = "Off!!" 
     else:
       bot.send_message(chat_id = chat, text = "Nsfw is already off duh..", reply_to_message_id = msg_id )
