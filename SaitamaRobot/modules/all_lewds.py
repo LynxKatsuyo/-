@@ -11,7 +11,7 @@ SAYNO = ['no', 'No', 'NO', 'OFF', 'Off', 'off']
 def nsfw(update: Update, context: CallbackContext ):
   NSFW = True
   bot = context.bot
-  msg = update.effective_message.text.split(" ", 1):
+  msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id 
   if len(msg) >= 2:
