@@ -9,7 +9,7 @@ SAYNO = ['no', 'No', 'NO', 'OFF', 'Off', 'off']
 
 @run_async 
 def nsfw(update: Update, context: CallbackContext ):
-  NSFW = True
+  NSFW = "True" 
   bot = context.bot
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
