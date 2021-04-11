@@ -27,7 +27,7 @@ def nsfw(update: Update, context: CallbackContext ):
   if chatto.type == "private":
     msgs.reply_text("Nsfw is always on in private chats my dear..") 
     return
-  if chat in ChatOff:
+  if chatto in ChatOff:
     Status = "Off!!"
   else:
     Status = "On!!" 
@@ -38,7 +38,7 @@ def nsfw(update: Update, context: CallbackContext ):
   else:
     ItsTime = "True" 
   if args in SAYON:
-    if chat in ChatOff:
+    if chatto in ChatOff:
       po = ChatOff.remove(chat)
     else:
       pass
@@ -46,7 +46,7 @@ def nsfw(update: Update, context: CallbackContext ):
     NSFW = "True" 
     bot.send_message(chat_id = chatto.id , text = "Feelings intensifies as NSFW is allowed!! Nyah!!", reply_to_message_id = msg_id)
   elif args in SAYNO:
-    if not chat in ChatOff:
+    if not chatto in ChatOff:
       appe = ChatOff.append(chat)
       bot.send_message(chat_id = chatto.id , text = "Uhk Nsfw is off now!! Mewow!! ", reply_to_message_id = msg_id )
       Status = "Off!!" 
