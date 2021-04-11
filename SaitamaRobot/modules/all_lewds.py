@@ -31,7 +31,7 @@ def nsfw(update: Update, context: CallbackContext ):
     NSFW = "True" 
     bot.send_message(chat_id = chat, text = "Feelings intensifies as NSFW is allowed!! Nyah!!", reply_to_message_id = msg_id)
   elif args in SAYNO:
-    if chat in ChatOff:
+    if not chat in ChatOff:
       appe = ChatOff.append(chat)
     else:
       bot.send_message(chat_id = chat, text = "Nsfw is already off duh..", reply_to_message_id = msg_id )
