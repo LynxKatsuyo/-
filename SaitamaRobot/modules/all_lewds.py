@@ -8,15 +8,22 @@ SAYON = ['yes', 'Yes', 'YES', 'on', 'On', 'ON']
 SAYNO = ['no', 'No', 'NO', 'Off', 'off', 'OFF' ]
 ChatOff = []
 NSFW = "True "
+
 @run_async 
+@user_admin 
+@gloggable
 def nsfw(update: Update, context: CallbackContext ):
   Status = " " 
   global NSFW
   NSFW = "True" 
   bot = context.bot
+  msgs = update.effective_message 
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id 
+  if chat.type == "private":
+   .msgs.reply_text(chat_id = chat, text = "Nsfw is always on in private chats my dear..") 
+    return
   if chat in ChatOff:
     Status = "Off!!"
   else:
