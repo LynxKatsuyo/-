@@ -10,12 +10,17 @@ ChatOff = []
 NSFW = "True "
 @run_async 
 def nsfw(update: Update, context: CallbackContext ):
+  Status = " " 
   global NSFW
   NSFW = "True" 
   bot = context.bot
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
   chat = update.effective_chat.id 
+  if chat in ChatOff:
+    Status = "Off!!"
+  else:
+    Status = "On!!" 
   args = " "
   ItsTime = " " 
   if len(msg) >= 2:
@@ -33,17 +38,19 @@ def nsfw(update: Update, context: CallbackContext ):
   elif args in SAYNO:
     if not chat in ChatOff:
       appe = ChatOff.append(chat)
+      bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! ", reply_to_message_id = msg_id )
+      Status = "Off!!" 
     else:
       bot.send_message(chat_id = chat, text = "Nsfw is already off duh..", reply_to_message_id = msg_id )
-    Status = "Off!!"
-    NSFW = "False" 
-    bot.send_message(chat_id = chat, text = "Uhk Nsfw isn't allowed in this chat now.. Mewo!!", reply_to_message_id= msg_id )
+    #Status = "Off!!"
+    #NSFW = "False" 
+    #bot.send_message(chat_id = chat, text = "Uhk Nsfw isn't allowed in this chat now.. Mewo!!", reply_to_message_id= msg_id )
   else:
-    bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! ", reply_to_message_id = msg_id )
-  if ItsTime == "True":
-    bot.send_message(chat_id = chat, text = "Nsfw in this chat is {}".format(Status), reply_to_message_id = msg_id )
-  else:
-    pass
+    bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! At the moment the nsfw status for this chat is {}".format(Status), reply_to_message_id = msg_id )
+  #if ItsTime == "True":
+   # bot.send_message(chat_id = chat, text = "Nsfw in this chat is {}".format(Status), reply_to_message_id = msg_id )
+  #else:
+    #pass
   
 @run_async 
 def neko(update: Update, context: CallbackContext ):
