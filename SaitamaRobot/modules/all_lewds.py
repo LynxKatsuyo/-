@@ -23,9 +23,9 @@ def nsfw(update: Update, context: CallbackContext ):
   msg = update.effective_message.text.split(" ", 1)
   msg_id = update.effective_message.message_id 
   chatto = update.effective_chat 
-  chat = update.effective_chat.id 
+  #top
   if chatto.type == "private":
-    msgs.reply_text(chat_id = chat, text = "Nsfw is always on in private chats my dear..") 
+    msgs.reply_text(chat_id = chatto.id , text = "Nsfw is always on in private chats my dear..") 
     return
   if chat in ChatOff:
     Status = "Off!!"
@@ -44,19 +44,19 @@ def nsfw(update: Update, context: CallbackContext ):
       pass
     Status = "On!!"
     NSFW = "True" 
-    bot.send_message(chat_id = chat, text = "Feelings intensifies as NSFW is allowed!! Nyah!!", reply_to_message_id = msg_id)
+    bot.send_message(chat_id = chatto.id , text = "Feelings intensifies as NSFW is allowed!! Nyah!!", reply_to_message_id = msg_id)
   elif args in SAYNO:
     if not chat in ChatOff:
       appe = ChatOff.append(chat)
-      bot.send_message(chat_id = chat, text = "Uhk Nsfw is off now!! Mewow!! ", reply_to_message_id = msg_id )
+      bot.send_message(chat_id = chatto.id , text = "Uhk Nsfw is off now!! Mewow!! ", reply_to_message_id = msg_id )
       Status = "Off!!" 
     else:
-      bot.send_message(chat_id = chat, text = "Nsfw is already off duh..", reply_to_message_id = msg_id )
+      bot.send_message(chat_id = chatto.id, text = "Nsfw is already off duh..", reply_to_message_id = msg_id )
     #Status = "Off!!"
     #NSFW = "False" 
     #bot.send_message(chat_id = chat, text = "Uhk Nsfw isn't allowed in this chat now.. Mewo!!", reply_to_message_id= msg_id )
   else:
-    bot.send_message(chat_id = chat, text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! At the moment the nsfw status for this chat is {}".format(Status), reply_to_message_id = msg_id )
+    bot.send_message(chat_id = chatto.id , text = "Baka!!, Give me on/off or yes/no so that i can manage nsfw control.. Meow!! At the moment the nsfw status for this chat is {}".format(Status), reply_to_message_id = msg_id )
   #if ItsTime == "True":
    # bot.send_message(chat_id = chat, text = "Nsfw in this chat is {}".format(Status), reply_to_message_id = msg_id )
   #else:
