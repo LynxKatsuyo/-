@@ -6,6 +6,7 @@ from telegram.ext import CallbackContext, run_async
 
 SAYON = ['on', 'yes', 'On', 'ON', 'Yes', 'YES']
 SAYNO = ['no', 'No', 'NO', 'OFF', 'Off', 'off']
+NSFW = "True" 
 
 @run_async 
 def nsfw(update: Update, context: CallbackContext ):
