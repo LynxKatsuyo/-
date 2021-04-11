@@ -25,7 +25,7 @@ def nsfw(update: Update, context: CallbackContext ):
   chatto = update.effective_chat 
   #top
   if chatto.type == "private":
-    msgs.reply_text(chat_id = chatto.id , text = "Nsfw is always on in private chats my dear..") 
+    msgs.reply_text("Nsfw is always on in private chats my dear..") 
     return
   if chat in ChatOff:
     Status = "Off!!"
