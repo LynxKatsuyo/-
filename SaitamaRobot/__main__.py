@@ -212,7 +212,7 @@ def start(update: Update, context: CallbackContext):
                      [   
                         InlineKeyboardButton(
                              text="Help! ", 
-                             callback_data="send_helpp" ) 
+                             callback_data="help_plz" ) 
                        
                     ]]))
                   
@@ -257,7 +257,7 @@ def error_callback(update: Update, context: CallbackContext):
 @run_async
 def help_button(update, context):
     query = update.callback_query
-    help_match = re.match(r"send_helpp\((.+?)\)", query.data)
+    help_match = re.match(r"help_plz\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
