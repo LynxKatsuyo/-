@@ -1,6 +1,7 @@
 import os
 import datetime
 
+from SaitamaRobot import OWNER_ID 
 from telethon import events
 from telegram import Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
@@ -57,9 +58,12 @@ support_chat = os.getenv('SUPPORT_CHAT')
 @dev_plus
 def logs(update: Update, context: CallbackContext):
     chat_username = update.effective_chat.username
+    chat = update.effective_chat
     if not chat_username:
         return
     if chat_username != support_chat:
+        return
+    if chat.id != OWNER_ID:
         return
     user = update.effective_user
     with open('log.txt', 'rb') as f:
