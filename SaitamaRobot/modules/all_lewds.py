@@ -18,18 +18,18 @@ def nsfw(update: Update, context: CallbackContext ):
   bot = context.bot 
   status = "On!!" 
   chat = update.effective_chat
-  msg = update.effective_message 
+  msg = str(update.effective_message) 
   msg_id = update.effective_message.message_id 
   if chat.type == "private":
     msg.reply_text("Nsfw in private is always on my dear..")
     return
-  spl = str(msg).split(" ", 1)
+  spl = msg.split(" ", 1)
   chek = sql.is_nsfw_false(chat.id)
   args = " "
-  try:
+  if len(spl) >= 2:
     args = spl[1]
-  except:
-    IndexError
+  else:
+    args = " "
   if args in SAYON:
     if chek == True:
       status = "On!!"
@@ -38,7 +38,7 @@ def nsfw(update: Update, context: CallbackContext ):
     else:
       bot.send_message(chat_id = chat.id, text = "Nyah! Nswf is already enabled!! ", reply_to_message_id = msg_id )
   elif args in SAYNO:
-    if check == True:
+     if check == True:
       status = "Off!!" 
       bot.send_message(chat_id = chat.id, text = "Nyah!! Its already disabled baka!!")
       return
