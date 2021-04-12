@@ -36,7 +36,7 @@ def nsfw(update: Update, context: CallbackContext ):
   if args in SAYON:
     if chek == True:
       status = "On!!"
-      return sql.set_true(chat.id)
+      tru = sql.set_true(chat.id)
       bot.send_message(chat_id = chat.id, text = "Feelings intensifies as NSFW is enabled here!!", reply_to_message_id = msg_id) 
     else:
       bot.send_message(chat_id = chat.id, text = "Nyah! Nswf is already enabled!! ", reply_to_message_id = msg_id )
