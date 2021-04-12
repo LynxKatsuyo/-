@@ -42,7 +42,7 @@ def nsfw(update: Update, context: CallbackContext ):
       status = "Off!!" 
       bot.send_message(chat_id = chat.id, text = "Nyah!! Its already disabled baka!!")
       return
-    else:
+     else:
       fal = sql.set_false(chat.id)
       bot.send_message(chat_id = chat.id, text = "Feelings goin downhill as NSFW is disabled Mewow!!", reply_to_message_id = msg_id )
   else:
