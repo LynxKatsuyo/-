@@ -38,7 +38,7 @@ def nsfw(update: Update, context: CallbackContext ):
     else:
       bot.send_message(chat_id = chat.id, text = "Nyah! Nswf is already enabled!! ", reply_to_message_id = msg_id )
   elif args in SAYNO:
-     if check == True:
+     if chek == True:
       status = "Off!!" 
       bot.send_message(chat_id = chat.id, text = "Nyah!! Its already disabled baka!!")
       return
