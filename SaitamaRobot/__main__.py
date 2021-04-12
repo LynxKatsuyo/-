@@ -151,7 +151,6 @@ def test(update: Update, context: CallbackContext):
 
 @run_async
 def start(update: Update, context: CallbackContext):
-    keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
     if update.effective_chat.type == "private":
@@ -207,20 +206,20 @@ def start(update: Update, context: CallbackContext):
                              text="🚨 Support 🚨",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                          InlineKeyboardButton(
-                             text="🎆My Owner🎆", 
-                             url="https://t.me/DontKnowWhoRU")
+                             text="🔗 Source 🔗",
+                             url="https://t.me/biriyanikhaa ")
                      ],
                      [   
                         InlineKeyboardButton(
-                             text="HELP", 
-                             callback_data=send_help(update.effective_chat_id)) 
+                             text="Help! ", 
+                             callback_data="help_back" ) 
                        
                     ]]))
                   
                     
     else:
         update.effective_message.reply_text(
-            "Meow Meow!! \n<b>I Haven't napped since:</b> <code>{}</code>"
+            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
             .format(uptime),
             parse_mode=ParseMode.HTML)
 
@@ -258,6 +257,7 @@ def error_callback(update: Update, context: CallbackContext):
 @run_async
 def help_button(update, context):
     query = update.callback_query
+    help_plz = re.match(r"help_plz\((.+?)\)", query.data)
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
@@ -538,7 +538,8 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I am now online!")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Im onlime Nyah!!")
+            dispatcher.bot.sendMessage(f"{OWNER_ID}", "Im onlime!!") 
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
