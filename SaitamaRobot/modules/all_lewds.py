@@ -15,6 +15,8 @@ SAYNO = ['no', 'No', 'NO' ]
 @run_async
 @user_admin
 def nsfw(update: Update, context: CallbackContext ):
+  bot = context.bot 
+  status = "On!!" 
   chat = update.effective_chat
   msg = update.effective_message 
   msg_id = update.effective_message.message_id 
@@ -30,12 +32,14 @@ def nsfw(update: Update, context: CallbackContext ):
     IndexError
   if args in SAYON:
     if chek == True:
+      status = "On!!"
       return sql.set_true(chat.id)
       bot.send_message(chat_id = chat.id, text = "Feelings intensifies as NSFW is enabled here!!", reply_to_message_id = msg_id) 
     else:
       bot.send_message(chat_id = chat.id, text = "Nyah! Nswf is already enabled!! ", reply_to_message_id = msg_id )
   elif args in SAYNO:
     if check == True:
+      status = "Off!!" 
       bot.send_message(chat_id = chat.id, text = "Nyah!! Its already disabled baka!!")
       return
     else:
