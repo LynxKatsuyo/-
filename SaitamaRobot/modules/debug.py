@@ -51,19 +51,16 @@ async def i_do_nothing_yes(event):
                 )
 
 
-support_chat = os.getenv('SUPPORT_CHAT')
+support_chat = os.getenv('SUPPORT_CHAT'), "DontKnowWhoRU"
 
 
 @run_async
 @dev_plus
 def logs(update: Update, context: CallbackContext):
     chat_username = update.effective_chat.username
-    chat = update.effective_chat
     if not chat_username:
         return
     if chat_username != support_chat:
-        return
-    elif chat.id != OWNER_ID:
         return
     user = update.effective_user
     with open('log.txt', 'rb') as f:
