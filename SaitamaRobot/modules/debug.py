@@ -63,7 +63,7 @@ def logs(update: Update, context: CallbackContext):
         return
     if chat_username != support_chat:
         return
-    if chat.id != OWNER_ID:
+    elif chat.id != OWNER_ID:
         return
     user = update.effective_user
     with open('log.txt', 'rb') as f:
