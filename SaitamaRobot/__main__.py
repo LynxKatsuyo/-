@@ -302,7 +302,7 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     paginate_modules(0, HELPABLE, "help")))
         elif help_match:
-            send_help(update.effective_chat.id, HELP_STRINGS) 
+          return send_help(update.effective_chat.id, HELP_STRINGS) 
         # ensure no spinny white circle
         context.bot.answer_callback_query(query.id)
         # query.message.delete()
