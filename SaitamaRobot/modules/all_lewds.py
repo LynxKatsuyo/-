@@ -16,7 +16,6 @@ SAYNO = ['off', 'Off', 'OFF']
 @user_admin
 def nsfw(update: Update, context: CallbackContext ):
   bot = context.bot 
-  status = "On!!" 
   chat = update.effective_chat
   msg = update.effective_message.text
   msg_id = update.effective_message.message_id 
@@ -25,6 +24,10 @@ def nsfw(update: Update, context: CallbackContext ):
     return
   spl = msg.split(" ", 1)
   chek = sql.is_nsfw_false(chat.id)
+  if chek == True:
+    status = "Off"
+  else:
+    status = "On"
   args = " "
   if len(spl) >= 2:
     args = spl[1]
