@@ -18,7 +18,7 @@ def nsfw(update: Update, context: CallbackContext ):
   bot = context.bot 
   status = "On!!" 
   chat = update.effective_chat
-  msg = str(update.effective_message) 
+  msg = update.effective_message.text
   msg_id = update.effective_message.message_id 
   if chat.type == "private":
     msg.reply_text("Nsfw in private is always on my dear..")
