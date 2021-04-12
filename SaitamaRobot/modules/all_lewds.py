@@ -81,7 +81,7 @@ def neko(update: Update, context: CallbackContext ):
 @run_async 
 def yuri(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -92,7 +92,7 @@ def yuri(update: Update, context: CallbackContext ):
 @run_async 
 def trap(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -103,7 +103,7 @@ def trap(update: Update, context: CallbackContext ):
 @run_async 
 def futanari(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -114,7 +114,7 @@ def futanari(update: Update, context: CallbackContext ):
 @run_async 
 def hololewd(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -125,7 +125,7 @@ def hololewd(update: Update, context: CallbackContext ):
 @run_async 
 def lewdkemo(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -136,7 +136,7 @@ def lewdkemo(update: Update, context: CallbackContext ):
 @run_async 
 def sologif(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -147,7 +147,7 @@ def sologif(update: Update, context: CallbackContext ):
 @run_async 
 def feet(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -158,7 +158,7 @@ def feet(update: Update, context: CallbackContext ):
 @run_async 
 def feetgif(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -169,7 +169,7 @@ def feetgif(update: Update, context: CallbackContext ):
 @run_async 
 def cumgif(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -180,7 +180,7 @@ def cumgif(update: Update, context: CallbackContext ):
 @run_async 
 def erokemo(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -191,7 +191,7 @@ def erokemo(update: Update, context: CallbackContext ):
 @run_async
 def lesbian(update: Update, context: CallbackContext):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -202,7 +202,7 @@ def lesbian(update: Update, context: CallbackContext):
 @run_async 
 def wallpaper(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -213,7 +213,7 @@ def wallpaper(update: Update, context: CallbackContext ):
 @run_async 
 def lewdk(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -224,7 +224,7 @@ def lewdk(update: Update, context: CallbackContext ):
 @run_async 
 def ngif(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -235,7 +235,7 @@ def ngif(update: Update, context: CallbackContext ):
 @run_async 
 def tickle(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -246,7 +246,7 @@ def tickle(update: Update, context: CallbackContext ):
 @run_async 
 def lewd(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -257,7 +257,7 @@ def lewd(update: Update, context: CallbackContext ):
 @run_async 
 def feed(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -268,7 +268,7 @@ def feed(update: Update, context: CallbackContext ):
 @run_async 
 def kemonomimi(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -279,7 +279,7 @@ def kemonomimi(update: Update, context: CallbackContext ):
 @run_async 
 def gasm(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -292,7 +292,7 @@ def gasm(update: Update, context: CallbackContext ):
 @run_async 
 def poke(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -303,7 +303,7 @@ def poke(update: Update, context: CallbackContext ):
 @run_async 
 def anal(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -314,7 +314,7 @@ def anal(update: Update, context: CallbackContext ):
 @run_async 
 def slap(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -325,7 +325,7 @@ def slap(update: Update, context: CallbackContext ):
 @run_async 
 def hentai(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -336,7 +336,7 @@ def hentai(update: Update, context: CallbackContext ):
 @run_async 
 def ero(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -347,7 +347,7 @@ def ero(update: Update, context: CallbackContext ):
 @run_async 
 def holo(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -358,7 +358,7 @@ def holo(update: Update, context: CallbackContext ):
 @run_async 
 def blowjob(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -369,7 +369,7 @@ def blowjob(update: Update, context: CallbackContext ):
 @run_async 
 def pussy(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -380,7 +380,7 @@ def pussy(update: Update, context: CallbackContext ):
 @run_async 
 def boobs(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -391,7 +391,7 @@ def boobs(update: Update, context: CallbackContext ):
 @run_async 
 def pussypic(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id 
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -402,7 +402,7 @@ def pussypic(update: Update, context: CallbackContext ):
 @run_async 
 def waifu(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -416,7 +416,7 @@ def waifu(update: Update, context: CallbackContext ):
 @run_async 
 def kiss(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -427,7 +427,7 @@ def kiss(update: Update, context: CallbackContext ):
 @run_async 
 def femdom(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True : 
+    if sql.is_nsfw_false(chat) == True : 
       return
     bot = context.bot
     msg = update.effective_message
@@ -438,7 +438,7 @@ def femdom(update: Update, context: CallbackContext ):
 @run_async 
 def spank(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -449,7 +449,7 @@ def spank(update: Update, context: CallbackContext ):
 @run_async 
 def cuddle(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -460,7 +460,7 @@ def cuddle(update: Update, context: CallbackContext ):
 @run_async 
 def erok(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -471,7 +471,7 @@ def erok(update: Update, context: CallbackContext ):
 @run_async 
 def foxgirl(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -482,7 +482,7 @@ def foxgirl(update: Update, context: CallbackContext ):
 @run_async 
 def smug(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -493,7 +493,7 @@ def smug(update: Update, context: CallbackContext ):
 @run_async 
 def randomgif(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -504,7 +504,7 @@ def randomgif(update: Update, context: CallbackContext ):
 @run_async 
 def baka(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -515,7 +515,7 @@ def baka(update: Update, context: CallbackContext ):
 @run_async 
 def eronyuri(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -526,7 +526,7 @@ def eronyuri(update: Update, context: CallbackContext ):
 @run_async 
 def eron(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -537,7 +537,7 @@ def eron(update: Update, context: CallbackContext ):
 @run_async 
 def cumpic(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -548,7 +548,7 @@ def cumpic(update: Update, context: CallbackContext ):
 @run_async 
 def bj(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -559,7 +559,7 @@ def bj(update: Update, context: CallbackContext ):
 @run_async 
 def nekonsfw(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -570,7 +570,7 @@ def nekonsfw(update: Update, context: CallbackContext ):
 @run_async 
 def solo(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -581,7 +581,7 @@ def solo(update: Update, context: CallbackContext ):
 @run_async 
 def tits(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
@@ -592,7 +592,7 @@ def tits(update: Update, context: CallbackContext ):
 @run_async 
 def kuni(update: Update, context: CallbackContext ):
     chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat.id) == True :
+    if sql.is_nsfw_false(chat) == True :
       return
     bot = context.bot
     msg = update.effective_message
