@@ -9,8 +9,8 @@ from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-SAYON = ['yes', 'Yes', 'YES']
-SAYNO = ['no', 'No', 'NO' ]
+SAYON = ['on', 'On', 'ON']
+SAYNO = ['off', 'Off', 'OFF']
 
 @run_async
 @user_admin
