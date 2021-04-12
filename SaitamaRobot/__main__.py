@@ -211,8 +211,8 @@ def start(update: Update, context: CallbackContext):
                      ],
                      [   
                         InlineKeyboardButton(
-                             text="🎆My Owner🎆", 
-                             url="https://t.me/DontKnowWhoRU") 
+                             text="Help! ", 
+                             callback_data="help_back" ) 
                        
                     ]]))
                   
