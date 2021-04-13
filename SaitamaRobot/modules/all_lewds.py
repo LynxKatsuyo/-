@@ -313,17 +313,7 @@ def anal(update: Update, context: CallbackContext ):
     user = update.effective_message.message_id
     nek = nekos.img("anal")
     bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
-      
-@run_async 
-def slap(update: Update, context: CallbackContext ):
-    chat = update.effective_chat.id
-    if sql.is_nsfw_false(chat) == True :
-      return
-    bot = context.bot
-    msg = update.effective_message
-    user = update.effective_message.message_id
-    nek = nekos.img("slap")
-    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
+    
       
 @run_async 
 def hentai(update: Update, context: CallbackContext ):
@@ -626,7 +616,6 @@ KEMO_HANDLER = DisableAbleCommandHandler("kemonomimi", kemonomimi)
 GASM_HANDLER = DisableAbleCommandHandler("gasm", gasm)
 POKE_HANDLER = DisableAbleCommandHandler("poke", poke)
 ANAL_HANDLER = DisableAbleCommandHandler("anal", anal) 
-SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
 HENTAI_HANDLER = DisableAbleCommandHandler("hentai", hentai )
 ERO_HANDLER = DisableAbleCommandHandler("ero", ero )
 HOLO_HANDLER = DisableAbleCommandHandler("holo", holo )
@@ -678,7 +667,6 @@ dispatcher.add_handler(KEMO_HANDLER)
 dispatcher.add_handler(GASM_HANDLER)
 dispatcher.add_handler(POKE_HANDLER)
 dispatcher.add_handler(ANAL_HANDLER)
-dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(HENTAI_HANDLER)
 dispatcher.add_handler(ERO_HANDLER)
 dispatcher.add_handler(HOLO_HANDLER)
