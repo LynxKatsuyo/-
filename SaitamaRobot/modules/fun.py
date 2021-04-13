@@ -1,7 +1,7 @@
 import html
 import random
 import time
-
+import nekos
 import SaitamaRobot.modules.fun_strings as fun_strings
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
@@ -38,6 +38,7 @@ def sanitize(update: Update, context: CallbackContext):
 
 @run_async
 def slap(update: Update, context: CallbackContext):
+    nek = nekos.img("slap")
     bot, args = context.bot, context.args
     message = update.effective_message
     chat = update.effective_chat
@@ -88,7 +89,7 @@ def slap(update: Update, context: CallbackContext):
     reply = temp.format(
         user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 
-    reply_text(reply, parse_mode=ParseMode.HTML)
+    bot.send_animation(chat_id = chat.id, animation = nek, caption = reply, reply_to_message_id = message.message_id, parse_mode=ParseMode.HTML)
 
 
 @run_async
