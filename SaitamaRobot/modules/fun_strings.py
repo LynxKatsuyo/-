@@ -1,3 +1,10 @@
+HUG_STRINGS = (
+  "{user1} gave {user2} a huggie, so kawai!!"
+)
+
+
+
+
 RUN_STRINGS = (
     "Now you see me, now you don't."
     "ε=ε=ε=ε=┌(;￣▽￣)┘",
