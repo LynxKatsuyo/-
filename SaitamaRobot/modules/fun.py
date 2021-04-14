@@ -102,6 +102,7 @@ def pat_or_hug(update: Update, context: CallbackContext):
       nek = nekos.img("hug")
     bot = context.bot
     args = context.args
+    chat = update.effective_chat 
     message = update.effective_message
 
     reply_to = message.reply_to_message if message.reply_to_message else message
