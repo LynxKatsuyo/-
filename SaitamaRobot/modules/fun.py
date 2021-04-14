@@ -95,43 +95,37 @@ def slap(update: Update, context: CallbackContext):
 
 @run_async
 def pat(update: Update, context: CallbackContext):
+    msg = update.effective_message.text
+    if text == "/pat":
+      nek =nekos.img("pat")
+    else:
+      nek = nekos.img("hug")
     bot = context.bot
     args = context.args
     message = update.effective_message
 
     reply_to = message.reply_to_message if message.reply_to_message else message
 
-    curr_user = html.escape(message.from_user.first_name)
+    curr_user = message.from_user
     user_id = extract_user(message, args)
 
     if user_id:
         patted_user = bot.get_chat(user_id)
-        user1 = curr_user
-        user2 = html.escape(patted_user.first_name)
+        user1 = mention_html(curr_user.id, curr_user.first_name) 
+        user2 = mention_html(patted_user.id, patted_user.first_name)
 
     else:
-        user1 = bot.first_name
-        user2 = curr_user
-
-    pat_type = random.choice(("Text", "Gif", "Sticker"))
-    if pat_type == "Gif":
-        try:
-            temp = random.choice(fun_strings.PAT_GIFS)
-            reply_to.reply_animation(temp)
-        except BadRequest:
-            pat_type = "Text"
-
-    if pat_type == "Sticker":
-        try:
-            temp = random.choice(fun_strings.PAT_STICKERS)
-            reply_to.reply_sticker(temp)
-        except BadRequest:
-            pat_type = "Text"
-
+        user1 = mention_html(bot.id, bot.first_name) 
+        user2 = mention_html(curr_user.id, curr_user.first_name) 
+    if msg == "/pat":
+      pat = "Text"
+    else:
+      hug = "True"
     if pat_type == "Text":
         temp = random.choice(fun_strings.PAT_TEMPLATES)
         reply = temp.format(user1=user1, user2=user2)
-        reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
+        bot.animation(chat_id = chat.id, animation = nek, caption = reply, parse_mode=ParseMode.HTML)
+    else 
 
 
 @run_async
