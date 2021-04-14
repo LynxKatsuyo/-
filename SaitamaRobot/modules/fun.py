@@ -130,7 +130,7 @@ def pat_or_hug(update: Update, context: CallbackContext):
         bot.send_animation(chat_id = chat.id, animation = nek, caption = reply, reply_to_message_id = message.message_id, parse_mode=ParseMode.HTML)
     else:
         temp = random.choice(fun_strings.HUG_TEMPLATES)
-        reply = temp.format(user1 = user2, user2 = user2)
+        reply = temp.format(user1=user1,user2=user2)
         bot.send_animation(chat_id = chat.id, animation = nek, caption = reply, reply_to_message_id = message.message_id, parse_mode = ParseMode.HTML)
 
 
