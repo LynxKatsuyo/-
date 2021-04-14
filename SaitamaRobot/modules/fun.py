@@ -94,7 +94,7 @@ def slap(update: Update, context: CallbackContext):
 
 
 @run_async
-def pat(update: Update, context: CallbackContext):
+def pat_or_hug(update: Update, context: CallbackContext):
     msg = update.effective_message.text
     if msg == "/pat":
       nek =nekos.img("pat")
@@ -256,7 +256,7 @@ __help__ = """
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
-PAT_HANDLER = DisableAbleCommandHandler("pat", pat)
+PAT_HANDLER = DisableAbleCommandHandler(["pat", "hug"], pat_or_hug)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
