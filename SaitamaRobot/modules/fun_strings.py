@@ -1,4 +1,4 @@
-HUG_STRINGS = (
+HUG_TEMPLATES = (
   "{user1} gave {user2} a huggie, so kawai!!"
 )
 
