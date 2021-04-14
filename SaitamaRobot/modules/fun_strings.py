@@ -1,6 +1,7 @@
 HUG_TEMPLATES = (
     "{user1} gave {user2} a huggie, so kawai!!", 
-    "{user1} is hugging {user2}", 
+    "{user1} is hugging {user2} kawai!!",
+    "{user1} loves {user2} i guess, they are hugging 👉👈", 
 )
 RUN_STRINGS = (
     "Now you see me, now you don't."
