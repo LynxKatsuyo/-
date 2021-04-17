@@ -177,8 +177,8 @@ def cumgif(update: Update, context: CallbackContext ):
     bot = context.bot
     msg = update.effective_message
     user = update.effective_message.message_id
-    nek = nekos.img("cumg")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    nek = nekos.img("cum")
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
       
 @run_async 
 def erokemo(update: Update, context: CallbackContext ):
@@ -635,7 +635,7 @@ RANDOMGIF_HANDLER = DisableAbleCommandHandler("randomgif", randomgif )
 BAKA_HANDLER = DisableAbleCommandHandler("baka", baka )
 EROYURI_HANDLER = DisableAbleCommandHandler("eroyuri", eronyuri)
 ERON_HANDLER = DisableAbleCommandHandler("eron", eron)
-CUMPIC_HANDLER = DisableAbleCommandHandler("cumpic", cumgif)
+CUMPIC_HANDLER = DisableAbleCommandHandler("cumpic", cumpic)
 BJ_HANDLER = DisableAbleCommandHandler("bj", bj)
 NEKONSFW_HANDLER = DisableAbleCommandHandler("nekonsfw", nekonsfw)
 SOLO_HANDLER = DisableAbleCommandHandler("solo", solo )
