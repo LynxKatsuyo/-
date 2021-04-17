@@ -200,7 +200,7 @@ def lesbian(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_message.message_id
     nek = nekos.img("les")
-    bot.send_photo(chat_id = chat, photo = nek, reply_to_message_id = user)
+    bot.send_animation(chat_id = chat, animation = nek, reply_to_message_id = user)
 
 @run_async 
 def wallpaper(update: Update, context: CallbackContext ):
