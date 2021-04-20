@@ -124,6 +124,8 @@ def pat_or_hug(update: Update, context: CallbackContext):
     hug = " "
     if msg == "/pat":
       pat = "Text"
+    elif msg == "/pat@SetsunyaBot":
+      pat = "Text"
     else:
       hug = "True"
     if pat == "Text":
