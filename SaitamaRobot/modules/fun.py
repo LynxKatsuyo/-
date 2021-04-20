@@ -98,6 +98,8 @@ def pat_or_hug(update: Update, context: CallbackContext):
     msg = update.effective_message.text
     if msg == "/pat":
       nek =nekos.img("pat")
+    elif msg == "/pat@SetsunyaBot":
+      nek = nekos.img("pat")
     else:
       nek = nekos.img("hug")
     bot = context.bot
