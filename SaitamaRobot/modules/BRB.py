@@ -76,7 +76,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
     global afk_time 
     user = update.effective_user
     message = update.effective_message
-    msg_id = message.id
+    msg_id = message.message_id
     if not user:  # ignore channels
         return
     wht_time = get_readable_time((time.time() - afk_time))
