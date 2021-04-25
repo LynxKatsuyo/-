@@ -1,5 +1,5 @@
 import random, html
-
+import time
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import (DisableAbleCommandHandler,
                                           DisableAbleMessageHandler)
