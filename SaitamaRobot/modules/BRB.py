@@ -95,8 +95,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
 
-            chosen_option = random.choice(options)
-            chosen_option += "\n\n<b>Offline Time: {}</b>".format(wht_time)
+            chosen_option = random.choice(options) + f"\n\n<b>Downtime: {wht_time}</b>"
         except:
             update.effective_message.reply_text(chosen_option.format(firstname), parse_mode = "html")
             return
