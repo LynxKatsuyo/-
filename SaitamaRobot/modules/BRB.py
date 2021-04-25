@@ -43,7 +43,7 @@ def get_readable_time(seconds: int) -> str:
 
 @run_async
 def afk(update: Update, context: CallbackContext):
-  global afk_time
+    global afk_time
     args = update.effective_message.text.split(None, 1)
     user = update.effective_user
 
