@@ -96,9 +96,9 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
             chosen_option = random.choice(options)
-            chosen_option += "\nYou slept for </b>{}</b>".format(wht_time)
-            update.effective_message.reply_text(chosen_option.format(firstname))
+            chosen_option += "\n\n<b>Offline Time: {}</b>"
         except:
+            update.effective_message.reply_text(chosen_option.format(firstname), parse_mode = "html")
             return
 
 
@@ -164,7 +164,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
             if int(userc_id) == int(user_id):
                 return
             res = "{} is Offline Nyah!!\nLast seen: <b>{}</b> ago".format(fst_name, wht_time)
-            update.effective_message.reply_text(res)
+            update.effective_message.reply_text(res, parse_mode = "html")
         else:
             if int(userc_id) == int(user_id):
                 return
