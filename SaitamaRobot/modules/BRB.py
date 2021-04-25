@@ -96,7 +96,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
             chosen_option = random.choice(options)
-            chosen_option += "You were afk for {}".format(wht_time)
+            chosen_option += "\nYou were afk for *{}*".format(wht_time)
             update.effective_message.reply_text(chosen_option.format(firstname))
         except:
             return
@@ -104,10 +104,12 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 @run_async
 def reply_afk(update: Update, context: CallbackContext):
+    global afk_time 
     bot = context.bot
     message = update.effective_message
     userc = update.effective_user
     userc_id = userc.id
+    wht_time = get_readable_time((time.time() - afk_time))
     if message.entities and message.parse_entities(
         [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]):
         entities = message.parse_entities(
@@ -154,18 +156,20 @@ def reply_afk(update: Update, context: CallbackContext):
 
 
 def check_afk(update, context, user_id, fst_name, userc_id):
+    global afk_time 
+    wht_time = get_readable_time((time.time() - afk_time))
     if sql.is_afk(user_id):
         user = sql.check_afk_status(user_id)
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is Offline Nyah!! ".format(fst_name)
+            res = "{} is Offline Nyah!!\nLast seen: *{}* ago".format(fst_name, wht_time)
             update.effective_message.reply_text(res)
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is Offline.\nReason: <code>{}</code>".format(
-                html.escape(fst_name), html.escape(user.reason))
+            res = "{} is Offline!\nReason: <code>{}</code>\nLast seen: *{}* ago.."format(
+                html.escape(fst_name, wht_time ), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
 
