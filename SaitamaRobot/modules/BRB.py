@@ -168,7 +168,7 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is Offline!\nReason: <code>{}</code>\nLast seen: *{}* ago.."format(html.escape(fst_name, wht_time ), html.escape(user.reason))
+            res = "{} is Offline!\nReason: <code>{}</code>\nLast seen: *{}* ago.."format(html.escape(fst_name), html.escape(user.reason), wht_time)
             update.effective_message.reply_text(res, parse_mode="html")
 
 
