@@ -11,10 +11,39 @@ from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
+afk_time = " "
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
 
 
 @run_async
 def afk(update: Update, context: CallbackContext):
+  global afk_time
     args = update.effective_message.text.split(None, 1)
     user = update.effective_user
 
@@ -23,7 +52,7 @@ def afk(update: Update, context: CallbackContext):
 
     if user.id in [777000, 1087968824]:
         return
-
+    afk_time = time.time()
     notice = ""
     if len(args) >= 2:
         reason = args[1]
@@ -44,12 +73,13 @@ def afk(update: Update, context: CallbackContext):
 
 @run_async
 def no_longer_afk(update: Update, context: CallbackContext):
+    global afk_time 
     user = update.effective_user
     message = update.effective_message
 
     if not user:  # ignore channels
         return
-
+    wht_time = get_readable_time((time.time() - afk_time))
     res = sql.rm_afk(user.id)
     if res:
         if message.new_chat_members:  #dont say msg
@@ -66,6 +96,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
             chosen_option = random.choice(options)
+            chosen_option += "You were afk for {}".format(wht_time)
             update.effective_message.reply_text(chosen_option.format(firstname))
         except:
             return
