@@ -76,7 +76,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
     global afk_time 
     user = update.effective_user
     message = update.effective_message
-
+    msg_id = message.id
     if not user:  # ignore channels
         return
     wht_time = get_readable_time((time.time() - afk_time))
@@ -97,7 +97,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
             chosen_option = random.choice(options) + f"\n\n<b>Downtime: {wht_time}</b>"
         except:
-            update.effective_message.reply_text(chosen_option.format(firstname), parse_mode = "html")
+          bot.send_message(chat_id = update.effective_chat.id, text = chosen_option.format(firstname), parse_mode = "html", reply_to_message_id = msg_id )
             return
 
 
