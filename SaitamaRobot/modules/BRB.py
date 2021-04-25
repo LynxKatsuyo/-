@@ -95,9 +95,10 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
 
-            chosen_option = random.choice(options) + f"\n\n<b>Downtime: {wht_time}</b>"
-            bot.send_message(chat_id = update.effective_chat.id, text = chosen_option.format (firstname), parse_mode = "html", reply_to_message_id = msg_id )
+            chosen_option = random.choice(options) + f"\n\nDowntime: {wht_time}"
+            update.effective_message.reply_text(chosen_option.format(firstname))
         except:
+            print("Exception")
             return
 
 
