@@ -10,9 +10,9 @@ class AFK(BASE):
     user_id = Column(Integer, primary_key=True)
     is_afk = Column(Boolean)
     reason = Column(UnicodeText)
-    afk_time = Column(Integer, primary_key=True)
+    afk_time = Column(UnicodeText) 
 
-    def __init__(self, user_id, reason="", is_afk=True, afk_time=float("0.0")):
+    def __init__(self, user_id, reason="", is_afk=True, afk_time = 0.0):
         self.user_id = user_id
         self.reason = reason
         self.is_afk = is_afk
