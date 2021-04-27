@@ -16,6 +16,7 @@ class AFK(BASE):
         self.user_id = user_id
         self.reason = reason
         self.is_afk = is_afk
+        self.afk_time = afk_time
 
     def __repr__(self):
         return "afk_status for {}".format(self.user_id)
