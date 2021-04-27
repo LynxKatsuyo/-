@@ -39,7 +39,7 @@ def check_afk_status(user_id):
         SESSION.close()
 
 
-def set_afk(user_id, reason="", afk_time=""):
+def set_afk(user_id, reason="", afk_time=0.0):
     with INSERTION_LOCK:
         curr = SESSION.query(AFK).get(user_id)
         if not curr:
@@ -69,7 +69,7 @@ def rm_afk(user_id):
         return False
 
 
-def toggle_afk(user_id, reason="", afk_time=""):
+def toggle_afk(user_id, reason="", afk_time=0.0):
     with INSERTION_LOCK:
         curr = SESSION.query(AFK).get(user_id)
         if not curr:
