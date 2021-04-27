@@ -10,13 +10,13 @@ class AFK(BASE):
     user_id = Column(Integer, primary_key=True)
     is_afk = Column(Boolean)
     reason = Column(UnicodeText)
-    afk_time = Column(String(14), primary_key=True) 
+    #afk_time = Column(String(14), primary_key=True) 
 
-    def __init__(self, user_id, reason="", is_afk=True, afk_time = 0.0):
+    def __init__(self, user_id, reason="", is_afk=True):
         self.user_id = user_id
         self.reason = reason
         self.is_afk = is_afk
-        self.afk_time = afk_time
+        #self.afk_time = afk_time
 
     def __repr__(self):
         return "afk_status for {}".format(self.user_id)
@@ -39,16 +39,15 @@ def check_afk_status(user_id):
         SESSION.close()
 
 
-def set_afk(user_id, reason="", afk_time=0.0):
+def set_afk(user_id, reason=""):
     with INSERTION_LOCK:
         curr = SESSION.query(AFK).get(user_id)
         if not curr:
-            curr = AFK(user_id, reason, afk_time, True)
+            curr = AFK(user_id, reason , True)
         else:
             curr.is_afk = True
 
         AFK_USERS[user_id] = reason
-        AFK_USERS[user_id] = afk_time
 
         SESSION.add(curr)
         SESSION.commit()
@@ -69,11 +68,11 @@ def rm_afk(user_id):
         return False
 
 
-def toggle_afk(user_id, reason="", afk_time=0.0):
+def toggle_afk(user_id, reason=""):
     with INSERTION_LOCK:
         curr = SESSION.query(AFK).get(user_id)
         if not curr:
-            curr = AFK(user_id, reason, afk_time , True)
+            curr = AFK(user_id, reason , True)
         elif curr.is_afk:
             curr.is_afk = False
         elif not curr.is_afk:
