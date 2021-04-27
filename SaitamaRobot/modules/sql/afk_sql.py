@@ -72,7 +72,7 @@ def toggle_afk(user_id, reason="", afk_time=""):
     with INSERTION_LOCK:
         curr = SESSION.query(AFK).get(user_id)
         if not curr:
-            curr = AFK(user_id, reason, afk_time = "", True)
+            curr = AFK(user_id, reason, afk_time , True)
         elif curr.is_afk:
             curr.is_afk = False
         elif not curr.is_afk:
