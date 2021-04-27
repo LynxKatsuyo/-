@@ -52,7 +52,7 @@ def afk(update: Update, context: CallbackContext):
 
     if user.id in [777000, 1087968824]:
         return
-    afk_time = float(time.time()) 
+    #afk_time = float(time.time()) 
     notice = ""
     if len(args) >= 2:
         reason = args[1]
@@ -95,7 +95,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
 
 
 
-            chosen_option = random.choice(options) + f"\n\nDowntime: {wht_time}"
+            chosen_option = random.choice(options)
             update.effective_message.reply_text(chosen_option.format(firstname))
         except:
             print("Exception")
@@ -109,7 +109,7 @@ def reply_afk(update: Update, context: CallbackContext):
     message = update.effective_message
     userc = update.effective_user
     userc_id = userc.id
-    wht_time = get_readable_time((time.time() - afk_time))
+    #wht_time = get_readable_time((time.time() - afk_time))
     if message.entities and message.parse_entities(
         [MessageEntity.TEXT_MENTION, MessageEntity.MENTION]):
         entities = message.parse_entities(
@@ -163,12 +163,12 @@ def check_afk(update, context, user_id, fst_name, userc_id):
         if not user.reason:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is Offline Nyah!!\nLast seen: <b>{}</b> ago".format(fst_name, wht_time)
+            res = "{} is Offline Nyah!!".format(fst_name)
             update.effective_message.reply_text(res, parse_mode = "html")
         else:
             if int(userc_id) == int(user_id):
                 return
-            res = "{} is Offline!\nReason: <code>{}</code>\nLast seen: <b>{}</b> ago..".format(html.escape(fst_name), html.escape(user.reason), wht_time)
+            res = "{} is Offline!\nReason: <code>{}</code>".format(html.escape(fst_name), html.escape(user.reason))
             update.effective_message.reply_text(res, parse_mode="html")
 
 
