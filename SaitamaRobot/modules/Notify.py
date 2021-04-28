@@ -40,7 +40,7 @@ def req(update: Update, context: CallbackContext):
             return "" 
         if chat and chat.type == Chat.SUPERGROUP:
           requested = "Nyahh!! Request accepted!!" 
-          msg = f"<b>Request: </b>{html_escape(chat.title)}\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
+          msg = f"<b>Request: </b>{html.escape(chat.title)}\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
           link = link = f'<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
         for admin in admin_list:
           if admin.user.is_bot:
