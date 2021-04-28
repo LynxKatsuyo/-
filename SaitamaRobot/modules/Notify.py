@@ -61,10 +61,10 @@ def req(update: Update, context: CallbackContext):
                             msg + link,
                             parse_mode=ParseMode.HTML)
 
-           except Unauthorized:
-            pass
-           except BadRequest as excp:  # TODO: cleanup exceptions
-            LOGGER.exception("Exception while reporting user")
+            except Unauthorized:
+              pass
+            except BadRequest as excp:  # TODO: cleanup exceptions
+              LOGGER.exception("Exception while reporting user")
 
         message.reply_to_message.reply_text("Nyah! Request Accepted!!") 
         return msg
