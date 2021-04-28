@@ -19,11 +19,15 @@ REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 @run_async 
 def req(update: Update, context: CallbackContext):
   bot = context.bot 
-  args = context.args 
   message =update.effective_message
   user = update.effective_user 
   chat = update.effective_chat 
   message_id = update.effective_message.message_id 
+  argue = message.text.split(" ", 1)
+  if argue[1]:
+    args = argue[1]
+  else:
+    args = "None"
   
   if chat and sql.chat_should_report(chat.id):
         requesting_user = user.id
@@ -31,7 +35,7 @@ def req(update: Update, context: CallbackContext):
         admin_list = chat.get_administrators()
         message = update.effective_message
 
-        if not args:
+        if args == "None":
             message.reply_text("Nyah boi request something!!")
             return "" 
         if chat.username and chat.type == Chat.SUPERGROUP:
