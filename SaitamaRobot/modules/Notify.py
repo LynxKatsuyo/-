@@ -1,6 +1,6 @@
 import html
 
-from SaitamaRobot.modules.disable import DisableAbleCommandHandler 
+from SaitamaRobot.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
 from SaitamaRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
 from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
