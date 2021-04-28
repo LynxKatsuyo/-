@@ -20,6 +20,7 @@ REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 def req(update: Update, context: CallbackContext):
   bot = context.bot 
   message =update.effective_message
+  ms = message.reply_to_message
   user = update.effective_user 
   chat = update.effective_chat 
   message_id = update.effective_message.message_id
@@ -33,8 +34,8 @@ def req(update: Update, context: CallbackContext):
     args = "None"
   
   if chat and sql.chat_should_report(chat.id):
-        if message.reply_to_message:
-          requesting_user = message.reply_to_message.from_user
+        if ms:
+          requesting_user = ms.from_user
         else:
           requesting_user = user.id
         chat_name = chat.title or chat.first or chat.username
