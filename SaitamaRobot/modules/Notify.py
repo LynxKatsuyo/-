@@ -22,15 +22,21 @@ def req(update: Update, context: CallbackContext):
   message =update.effective_message
   user = update.effective_user 
   chat = update.effective_chat 
-  message_id = update.effective_message.message_id 
-  argue = message.text.split(None, 1)
+  message_id = update.effective_message.message_id
+  if message.reply_to_message:
+    argue = message.reply_to_message.text.split(None, 1)
+  else:
+    argue = message.text.split(None, 1)
   if len(argue) >= 2:
     args = argue[1]
   else:
     args = "None"
   
   if chat and sql.chat_should_report(chat.id):
-        requesting_user = user.id
+        if message.reply_to_message:
+          requesting_user = message.reply_to_message.from_user
+        else:
+          requesting_user = user.id
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
         message = update.effective_message
