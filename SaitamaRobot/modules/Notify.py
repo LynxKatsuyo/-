@@ -1,5 +1,6 @@
 import html
 
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler 
 from SaitamaRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
 from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
@@ -8,7 +9,7 @@ from SaitamaRobot.modules.sql import reporting_sql as sql
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import (CallbackContext, CallbackQueryHandler, DisableAbleCommandHandler,
+from telegram.ext import (CallbackContext, CallbackQueryHandler,
                           Filters, MessageHandler, run_async)
 from telegram.utils.helpers import mention_html
 
