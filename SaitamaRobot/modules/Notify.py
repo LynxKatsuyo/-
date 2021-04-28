@@ -25,7 +25,7 @@ def req(update: Update, context: CallbackContext):
   chat = update.effective_chat 
   message_id = update.effective_message.message_id 
   
-  if chat and message.reply_to_message and sql.chat_should_report(chat.id):
+  if chat and sql.chat_should_report(chat.id):
         requesting_user = user.id
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
