@@ -68,7 +68,7 @@ def req(update: Update, context: CallbackContext):
             except BadRequest as excp:  # TODO: cleanup exceptions
               LOGGER.exception("Exception while reporting user")
 
-        message.reply_to_message.reply_text("Nyah! Request Accepted!!") 
+        message.reply_text("Nyah! Request Accepted!!") 
         return msg
 
         return ""  
