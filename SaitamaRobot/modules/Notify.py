@@ -39,7 +39,7 @@ def req(update: Update, context: CallbackContext):
           msg = f"<b>Request: </b>{html_escape(chat.title)}\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
           link = link = f'<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
         for admin in admin_list:
-          if admin.user.is_bot():
+          if admin.user.is_bot:
             #ignore bots
             continue
           if sql.user_should_report(admin.user.id):
