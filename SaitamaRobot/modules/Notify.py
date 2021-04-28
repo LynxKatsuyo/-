@@ -24,9 +24,9 @@ def req(update: Update, context: CallbackContext):
   chat = update.effective_chat 
   message_id = update.effective_message.message_id 
   argue = message.text.split(" ", 1)
-  if argue[1]:
+  try:
     args = argue[1]
-  else:
+  except IndexError:
     args = "None"
   
   if chat and sql.chat_should_report(chat.id):
