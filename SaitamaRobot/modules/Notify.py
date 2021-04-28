@@ -69,9 +69,7 @@ def req(update: Update, context: CallbackContext):
         message.reply_to_message.reply_text("Nyah! Request Accepted!!") 
         return msg
 
-    return """"
-    doc
-    """
+       return ""  
   
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
 REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^(?i)#request(.*)$"), afk, friendly="request")
