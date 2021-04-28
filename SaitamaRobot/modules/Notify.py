@@ -27,6 +27,7 @@ def req(update: Update, context: CallbackContext):
   try:
     args = argue[1]
   except IndexError:
+    print("Stuck!")
     args = "None"
   
   if chat and sql.chat_should_report(chat.id):
