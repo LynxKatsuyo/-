@@ -23,7 +23,7 @@ def req(update: Update, context: CallbackContext):
   user = update.effective_user 
   chat = update.effective_chat 
   message_id = update.effective_message.message_id 
-  argue = message.text.split(" ", 1)
+  argue = message.text.split(None, 1)
   if len(argue) >= 2:
     args = argue[1]
   else:
