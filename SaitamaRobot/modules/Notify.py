@@ -41,7 +41,7 @@ def req(update: Update, context: CallbackContext):
         if chat and chat.type == Chat.SUPERGROUP:
           requested = "Nyahh!! Request accepted!!" 
           msg = f"<b>Request: </b>{html.escape(chat.title)}\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
-          link = link = f'<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
+          link = link = f'<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.umessage_id}">click here</a>'
         for admin in admin_list:
           if admin.user.is_bot:
             #ignore bots
@@ -74,7 +74,7 @@ def req(update: Update, context: CallbackContext):
         return ""  
   
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
-REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^(?i)#request(.*)$"), req, friendly="request")
+REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^(?i)#req(.*)$"), req, friendly="request")
  
 dispatcher.add_handler(REQU_HANDLER)
 dispatcher.add_handler(REQ_HANDLER)
