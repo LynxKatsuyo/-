@@ -38,7 +38,7 @@ def req(update: Update, context: CallbackContext):
         if args == "None":
             message.reply_text("Nyah boi request something!!")
             return "" 
-        if chat.username and chat.type == Chat.SUPERGROUP:
+        if chat and chat.type == Chat.SUPERGROUP:
           requested = "Nyahh!! Request accepted!!" 
           msg = f"<b>Request: </b>{html_escape(chat.title)}\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
           link = link = f'<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
@@ -55,10 +55,7 @@ def req(update: Update, context: CallbackContext):
                             parse_mode=ParseMode.HTML)
                             
               if not chat.username:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML)
+                bot.send_message(admin.user.id, msg + link, parse_mode=ParseMode.HTML)
 
               if chat.username and chat.type == Chat.SUPERGROUP:
                         bot.send_message(
