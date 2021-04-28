@@ -13,7 +13,7 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler,
                           Filters, MessageHandler, run_async)
 from telegram.utils.helpers import mention_html
 
-REPORT_GROUP = 12
+NOTIF_GROUP = 12
 REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 
 @run_async 
@@ -76,7 +76,7 @@ def req(update: Update, context: CallbackContext):
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
 REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"#req"), req, friendly="request")
  
-dispatcher.add_handler(REQU_HANDLER)
-dispatcher.add_handler(REQ_HANDLER)
+dispatcher.add_handler(REQU_HANDLER, NOTIF_GROUP)
+dispatcher.add_handler(REQ_HANDLER, NOTIF_GROUP)
             
           
