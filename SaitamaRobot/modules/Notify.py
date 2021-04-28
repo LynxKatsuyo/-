@@ -73,7 +73,7 @@ def req(update: Update, context: CallbackContext):
         return ""  
   
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
-REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^(?i)#request(.*)$"), afk, friendly="request")
+REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^(?i)#request(.*)$"), req, friendly="request")
  
 dispatcher.add_handler(REQU_HANDLER)
 dispatcher.add_handler(REQ_HANDLER)
