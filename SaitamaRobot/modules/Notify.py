@@ -8,7 +8,7 @@ from SaitamaRobot.modules.sql import reporting_sql as sql
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
+from telegram.ext import (CallbackContext, CallbackQueryHandler, DisableAbleCommandHandler,
                           Filters, MessageHandler, run_async)
 from telegram.utils.helpers import mention_html
 
