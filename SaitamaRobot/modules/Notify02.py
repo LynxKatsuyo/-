@@ -35,7 +35,11 @@ def req(update: Update, context: CallbackContext):
       print("Called by # but was not #req")
       return
   if message.reply_to_message:
-    argue = message.reply_to_message.text.split(None, 1)
+    if message.reply_to_message.caption:
+      argue = message.reply_to_message.caption.split(None, 1)
+    else:
+      argue = message.reply_to_message.text.split(None, 1)
+    
   else:
     argue = message.text.split(None, 1)
   if len(argue) >= 2:
