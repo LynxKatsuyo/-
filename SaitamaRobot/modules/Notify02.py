@@ -26,7 +26,7 @@ def req(update: Update, context: CallbackContext):
   message_id = update.effective_message.message_id
   if message.text.startswith("/req"):
     pass
-  elif message.text == "#req":
+  elif message.text.split(None, 1)[0] = "#req":
     pass
   else:
     print("Called by # but was not #req")
