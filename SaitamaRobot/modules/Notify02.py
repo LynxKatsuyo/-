@@ -101,6 +101,7 @@ def req(update: Update, context: CallbackContext):
             link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">.......</a>'
           else:
             link = " "
+        #bot.send_message(sql.get_req_id, msg + link, parse_mode = ParseMode.HTML)
         for admin in admin_list:
           if admin.user.is_bot:
             #ignore bots
