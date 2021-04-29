@@ -28,7 +28,7 @@ def req(update: Update, context: CallbackContext):
     pass
   elif message.text.startswith("#"):
     mse = message.text.split(None, 1)
-    rig = msg[0]
+    rig = mse[0]
     if rig == "#req":
       pass
     else:
