@@ -30,6 +30,7 @@ def req(update: Update, context: CallbackContext):
     pass
   else:
     print("Called by # but was not #req")
+    return
   if message.reply_to_message:
     argue = message.reply_to_message.text.split(None, 1)
   else:
