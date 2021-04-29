@@ -26,11 +26,14 @@ def req(update: Update, context: CallbackContext):
   message_id = update.effective_message.message_id
   if message.text.startswith("/req"):
     pass
-  elif message.text.split(None, 1)[0] = "#req":
-    pass
-  else:
-    print("Called by # but was not #req")
-    return
+  elif message.text.startswith("#"):
+    mse = message.text.split(None, 1)
+    rig = msg[0]
+    if rig == "#req":
+      pass
+    else:
+      print("Called by # but was not #req")
+      return
   if message.reply_to_message:
     argue = message.reply_to_message.text.split(None, 1)
   else:
