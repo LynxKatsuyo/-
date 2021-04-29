@@ -84,10 +84,8 @@ def req(update: Update, context: CallbackContext):
   if chat:
         msg = update.effective_message
         if msg.reply_to_message:
-          print("Oh its passing ahh")
           req_user = msg.reply_to_message.from_user
         else:
-          print("U suck mf")
           req_user = user.id
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
@@ -98,7 +96,7 @@ def req(update: Update, context: CallbackContext):
             return "" 
         if chat and chat.type == Chat.SUPERGROUP:
           requested = "Nyahh!! Request accepted!!" 
-          msg = f"<b>{html.escape(chat.title)}</b>\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
+          msg = f"<b>{html.escape(chat.title)}</b>\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(req_user.id, req_user.first_name)}"
           if chat.username:
             link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">.......</a>'
           else:
