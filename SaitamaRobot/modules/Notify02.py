@@ -68,26 +68,28 @@ def req(update: Update, context: CallbackContext):
       print("Called by # but was not #req")
       return
   if message.reply_to_message:
+    kek = message.reply_to_message
     if message.reply_to_message.caption:
       argue = message.reply_to_message.caption.split(None, 1)
     else:
       argue = message.reply_to_message.text.split(None, 1)
-    
   else:
+    kek = message 
     argue = message.text.split(None, 1)
   if len(argue) >= 2:
     args = argue[1]
   else:
     args = "None"
   
-  if chat and sql.chat_should_report(chat.id):
-        if ms:
-          requesting_user = ms.from_user
+  if chat:
+        msg = update.effective_message
+        if msg.reply_to_message:
+          requesting_user = msg.reply_to_message.from_user
         else:
           requesting_user = user.id
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
-        message = update.effective_message
+        message = kek
 
         if args == "None":
             message.reply_text("Nyah boi request something!!")
@@ -132,8 +134,10 @@ def req(update: Update, context: CallbackContext):
   
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
 REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^#[^\s]+"), req, friendly="request")
+SET_HANDLER = DisableAbleCommandHandler("setreq", setreq)
  
 dispatcher.add_handler(REQU_HANDLER, NOTIF_GROUP)
+dispatcher.add_handler(SET_HANDLER)
 dispatcher.add_handler(REQ_HANDLER, NOTIF_GROUP)
             
           
