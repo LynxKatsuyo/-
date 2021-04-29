@@ -98,7 +98,7 @@ def req(update: Update, context: CallbackContext):
           requested = "Nyahh!! Request accepted!!" 
           msg = f"<b>{html.escape(chat.title)}</b>\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
           if chat.username:
-            link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">   </a>'
+            link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">.......</a>'
           else:
             link = " "
         for admin in admin_list:
