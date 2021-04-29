@@ -86,7 +86,7 @@ def req(update: Update, context: CallbackContext):
         if msg.reply_to_message:
           req_user = msg.reply_to_message.from_user
         else:
-          req_user = user.id
+          req_user = user
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
         message = kek
