@@ -16,6 +16,39 @@ from telegram.utils.helpers import mention_html
 NOTIF_GROUP = 12
 REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
 
+@run_async
+@user_admin
+def setreq(update: Update, context: CallbackContext):
+  bot = context.bot
+  message = update.effective_message
+  chat = update.effective_chat
+  if chat.type == chat.CHANNEL:
+    message.reply_text("Now, forward the /setreq to the group you want to tie this channel to!")
+  elif message.forward_from_chat:
+    sql.set_chat_log_channel(chat.id, message.forward_from_chat.id)
+    try:
+      message.delete()
+    except BadRequest as excp:
+      if excp.message == "Message to delete not found":
+        pass
+      else:
+        LOGGER.exception("Error deleting message in log channel. Should work anyway though.")
+    try:
+      bot.send_message(message.forward_from_chat.id, f"This channel has been set as the requests logger channel for {chat.title or chat.first_name}.")
+    except Unauthorized as excp:
+      if excp.message == "Forbidden: bot is not a member of the channel chat":
+          bot.send_message(chat.id, "Successfully set requests logs channel!")
+      else:
+        LOGGER.exception("ERROR in setting the log channel.")
+    bot.send_message(chat.id, "Successfully set requests log channel!")
+  else:
+    message.reply_text("The steps to set a request log channel are:\n"
+                               " - add bot to the desired channel\n"
+                               " - send /setlog to the channel\n"
+                               " - forward the /setlog to the group\n")
+
+
+
 @run_async 
 def req(update: Update, context: CallbackContext):
   bot = context.bot 
