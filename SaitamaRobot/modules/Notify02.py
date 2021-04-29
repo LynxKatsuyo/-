@@ -96,7 +96,7 @@ def req(update: Update, context: CallbackContext):
             return "" 
         if chat and chat.type == Chat.SUPERGROUP:
           requested = "Nyahh!! Request accepted!!" 
-          msg = f"<b>{html.escape(chat.title)}</b>\n<b>Requested: </b> {args}\n<b>Requesting User:</b> {mention_html(user.id, user.first_name)}"
+          msg = f"<b> • {html.escape(chat.title)}</b>\n<b> • Requested: </b> {args}\n<b> • Requesting User:</b> {mention_html(user.id, user.first_name)}"
           if chat.username:
             link = f'\n<b> • The message:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
           else:
