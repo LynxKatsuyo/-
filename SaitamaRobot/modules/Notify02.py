@@ -24,6 +24,12 @@ def req(update: Update, context: CallbackContext):
   user = update.effective_user 
   chat = update.effective_chat 
   message_id = update.effective_message.message_id
+  message.text.startswith("/"):
+    pass
+  elif message.text == "#req":
+    pass
+  else:
+    print("Called by # but was not #req")
   if message.reply_to_message:
     argue = message.reply_to_message.text.split(None, 1)
   else:
@@ -81,7 +87,7 @@ def req(update: Update, context: CallbackContext):
         return ""  
   
 REQU_HANDLER = DisableAbleCommandHandler ("request", req) 
-REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"#req"), req, friendly="request")
+REQ_HANDLER = DisableAbleMessageHandler(Filters.regex(r"^#[^\s]+"), req, friendly="request")
  
 dispatcher.add_handler(REQU_HANDLER, NOTIF_GROUP)
 dispatcher.add_handler(REQ_HANDLER, NOTIF_GROUP)
