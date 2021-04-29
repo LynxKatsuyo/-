@@ -24,7 +24,7 @@ def req(update: Update, context: CallbackContext):
   user = update.effective_user 
   chat = update.effective_chat 
   message_id = update.effective_message.message_id
-  message.text.startswith("/"):
+  message.text.startswith("/req"):
     pass
   elif message.text == "#req":
     pass
