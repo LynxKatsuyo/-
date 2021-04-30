@@ -5,7 +5,7 @@ from SaitamaRobot import (LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher)
 from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
 from SaitamaRobot.modules.log_channel import loggable
-from SaitamaRobot.modules.sql import reporting_sql as sql
+from SaitamaRobot.modules.sql import req_channel_sql as sql
 from telegram import (Chat, InlineKeyboardButton, InlineKeyboardMarkup,
                       ParseMode, Update)
 from telegram.error import BadRequest, Unauthorized
@@ -25,7 +25,7 @@ def setreq(update: Update, context: CallbackContext):
   if chat.type == chat.CHANNEL:
     message.reply_text("Now, forward the /setreq to the group you want to tie this channel to!")
   elif message.forward_from_chat:
-    sql.set_chat_log_channel(chat.id, message.forward_from_chat.id)
+    sql.set_chat_req_channel(chat.id, message.forward_from_chat.id)
     try:
       message.delete()
     except BadRequest as excp:
@@ -101,7 +101,10 @@ def req(update: Update, context: CallbackContext):
             link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">.......</a>'
           else:
             link = " "
-        #bot.send_message(sql.get_req_id, msg + link, parse_mode = ParseMode.HTML)
+        if sql.get_chat_req_channel:
+            bot.send_message(sql.get_chat_req_channel, msg + link, parse_mode = ParseMode.HTML)
+        else:
+            bot.send_message(chat.id, "Req Channel Not set!" )
         for admin in admin_list:
           if admin.user.is_bot:
             #ignore bots
