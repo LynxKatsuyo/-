@@ -34,6 +34,7 @@ def sauce(update: Update, context: CallbackContext ):
   filename_gif = "saucey.gif" 
   if not reply:
     bot.send_message(chat.id, "Reply to something baka...")
+    return
   if reply:
     if reply.photo:
       photo_id = reply.photo.file_id
