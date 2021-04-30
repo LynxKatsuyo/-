@@ -1,6 +1,6 @@
 from saucenao_api import SauceNao 
 from saucenao_api.params import DB
-
+import os
 from SaitamaRobot import dispatcher 
 from SaitamaRobot.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
 from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
@@ -16,15 +16,14 @@ from telegram.utils.helpers import mention_html
 
 
 
-API = "6851aa2ae17da0042a7b02af3f7a1c55485ceafc"
-sauce = SauceNao(api_key=API, db = 999)
 
 
 
 @run_async 
 def sauce(update: Update, context: CallbackContext ):
   results = " "
-  global sauce
+  API = "6851aa2ae17da0042a7b02af3f7a1c55485ceafc"
+  sauce = SauceNao(api_key=API, db = 999)
   bot = context.bot 
   msg = update.effective_message 
   msg_id = update.effective_message.message_id 
