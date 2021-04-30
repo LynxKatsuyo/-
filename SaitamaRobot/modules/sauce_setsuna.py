@@ -74,7 +74,7 @@ def sauce(update: Update, context: CallbackContext ):
     rsudan = "True"  
     rsu = 2
   else:
-    pass 
+    rsudan = "False"
   if rsu_1 == 5:
     rsupix = "True" 
     rsu2 = 0
@@ -85,7 +85,7 @@ def sauce(update: Update, context: CallbackContext ):
     rsupix ="True" 
     rsu2 = 2 
   else:
-    pass
+    rsupix = "False"
   if rsudan == "True" :
     tex_dan = str(results[rsu].title)
     urdan = results[rsu].urls
@@ -127,7 +127,7 @@ def sauce(update: Update, context: CallbackContext ):
      print("Danboruu not found..")
   if pixiv == "True":
      if danboruu == "True":
-      text += "Pixiv Url:" + " " + url_pix
+      text += f"[Pixiv Url]({url_pix})" 
      else:
       text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + "Url:" + " " + url_pix + "\n" +  "Artist:" + " " + mem_pix)
   bot.send_message(chat.id, text, reply_to_message_id = msg_id, parse_mode = ParseMode.MARKDOWN)
