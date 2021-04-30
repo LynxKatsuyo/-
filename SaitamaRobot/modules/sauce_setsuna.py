@@ -42,7 +42,7 @@ def sauce(update: Update, context: CallbackContext ):
       photo_id = reply.sticker.file_id
       photo = "True" 
     else:
-      bot.send_message(chat_id = chat, text = "Nyah!!, give a gif, photo or a sticker!! " reply_to_message_id = msg_id)
+      bot.send_message(chat_id = chat, text = "Nyah!!, give a gif, photo or a sticker!! ", reply_to_message_id = msg_id)
       return
     if photo == "True":
       file = bot.get_file(photo_id)
