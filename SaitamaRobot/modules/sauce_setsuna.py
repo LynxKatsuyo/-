@@ -63,7 +63,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_2 = int(results[1].index_id)
   rsu_3 = int(results[2].index_id)
   text = " "
-  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix = " "
+  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix = " ", " ", " ", " ", " ", " ", " ", " ", " "
   if rsu_1 == 9:
     rsudan = "True" 
     rsu = 0 
