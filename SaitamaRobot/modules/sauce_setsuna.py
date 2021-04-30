@@ -129,7 +129,7 @@ def sauce(update: Update, context: CallbackContext ):
      if danboruu == "True":
       text += f"[Pixiv Url]({url_pix})" 
      else:
-      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + "Url:" + " " + url_pix + "\n" +  "Artist:" + " " + mem_pix)
+      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + f"[Url]({url_pix})" + "\n" +  "Artist:" + " " + mem_pix)
   bot.send_message(chat.id, text, reply_to_message_id = msg_id, parse_mode = ParseMode.MARKDOWN)
    
      
