@@ -56,6 +56,7 @@ def req(update: Update, context: CallbackContext):
   ms = message.reply_to_message
   user = update.effective_user 
   chat = update.effective_chat 
+  if not sql.get_chat_req_channel(chat.id)
   message_id = update.effective_message.message_id
   if message.text.startswith("/req"):
     pass
@@ -105,31 +106,6 @@ def req(update: Update, context: CallbackContext):
             bot.send_message(sql.get_chat_req_channel(chat.id), msg + link, parse_mode = ParseMode.HTML)
         else:
             bot.send_message(chat.id, "Req Channel Not set!" )
-        for admin in admin_list:
-          if admin.user.is_bot:
-            #ignore bots
-            continue
-          if sql.user_should_report(admin.user.id):
-            try:
-              if not chat.type == Chat.SUPERGROUP:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML)
-                            
-              if not chat.username:
-                bot.send_message(admin.user.id, msg + link, parse_mode=ParseMode.HTML)
-
-              if chat.username and chat.type == Chat.SUPERGROUP:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML)
-
-            except Unauthorized:
-              pass
-            except BadRequest as excp:  # TODO: cleanup exceptions
-              LOGGER.exception("Exception while reporting user")
 
         message.reply_text("Nyah! Request Accepted!!") 
         return msg
