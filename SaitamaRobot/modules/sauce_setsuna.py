@@ -67,7 +67,7 @@ def sauce(update: Update, context: CallbackContext ):
   elif rsu_2 == 9:
     rsudan = "True" 
     rsu = 1
-  elif rsu_3 = 9:
+  elif rsu_3 == 9:
     rsudan = "True"  
     rsu = 2
   else:
