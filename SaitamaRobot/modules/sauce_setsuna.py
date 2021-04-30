@@ -104,7 +104,7 @@ def sauce(update: Update, context: CallbackContext ):
      pass
   if danboruu == "True" :
     print("Danboruu hit!")
-    text += f"[Danboruu]({url_dan}) + "\n" + "*Title*" + " " + tex_dan + "\n*Creator*" + " " +  creator_dan + "\n*Material*" + " " + material_dan + "\n*Character*" + " " + character_dan + \n*Source*" + " " + f"[Danboruu]({source_dan})" 
+    text += f"[Danboruu]({url_dan})" + "\n" + "*Title*" + " " + tex_dan + "\n*Creator*" + " " +  creator_dan + "\n*Material*" + " " + material_dan + "\n*Character*" + " " + character_dan + "\n*Source*" + " " + f"[Danboruu]({source_dan})" 
   else:
      print("Danboruu not found..")
   if pixiv == "True":
