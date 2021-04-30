@@ -64,7 +64,7 @@ def req(update: Update, context: CallbackContext):
   elif message.text.startswith("#"):
     mse = message.text.split(None, 1)
     rig = mse[0]
-    if rig == "#req":
+    if rig == "#request":
       pass
     else:
       print("Called by # but was not #req")
