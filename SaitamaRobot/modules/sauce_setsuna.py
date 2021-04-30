@@ -59,9 +59,9 @@ def sauce(update: Update, context: CallbackContext ):
       results = sauce.from_file(oo)
     else:
       return
-  rsu_1  = int(results[0].id) 
-  rsu_2 = int(results[1].id)
-  rsu_3 = int(results[2].id)
+  rsu_1  = int(results[0].index_id) 
+  rsu_2 = int(results[1].index_id)
+  rsu_3 = int(results[2].index_id)
   text = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix = " "
   if rsu_1 == 9:
