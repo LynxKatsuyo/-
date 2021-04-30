@@ -101,8 +101,8 @@ def req(update: Update, context: CallbackContext):
             link = f'\n<b> </b> <a href="https://t.me/{chat.username}/{message.message_id}">.......</a>'
           else:
             link = " "
-        if sql.get_chat_req_channel:
-            bot.send_message(sql.get_chat_req_channel, msg + link, parse_mode = ParseMode.HTML)
+        if sql.get_chat_req_channel(chat.id):
+            bot.send_message(sql.get_chat_req_channel(chat.id), msg + link, parse_mode = ParseMode.HTML)
         else:
             bot.send_message(chat.id, "Req Channel Not set!" )
         for admin in admin_list:
