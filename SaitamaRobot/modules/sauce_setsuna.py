@@ -93,26 +93,26 @@ def sauce(update: Update, context: CallbackContext ):
     source_dan = " ".join(results[rsu].source)
     character_dan = " ".join(results[rsu].character)
     danboruu = "True" 
- else:
-    pass
- if rsupix == "True" :
-    tex_pix = str(results[rsu2].title)
-    url_pix = " ".join(results[rsu2].urls)
-    mem_pix = " ".join(results[rsu2].member_name)
-    pixiv = "True" 
- else:
-    pass
- if danboruu = "True" :
-   print("Danboruu hit!")
-   text += f"[Danboruu]({url_dan}) + "\n" + "*Title*" + " " + tex_dan + "\n*Creator*" + " " +  creator_dan + "\n*Material*" + " " + material_dan + "\n*Character*" + " " + character_dan + \n*Source*" + " " + f"[Danboruu]({source_dan}) 
- else:
-   print("Danboruu not found..")
- if pixiv = "True":
-   if danboruu = "True":
-     text += "Pixiv Url:" + " " + url_pix
-   else:
-     text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + "Url:" + " " + url_pix + "\n" +  "Artist:" + " " + mem_pix)
- bot.send_message(chat.id, text, reply_to_message_id = msg_id)
+  else:
+     pass
+  if rsupix == "True" :
+     tex_pix = str(results[rsu2].title)
+     url_pix = " ".join(results[rsu2].urls)
+     mem_pix = " ".join(results[rsu2].member_name)
+     pixiv = "True" 
+  else:
+     pass
+  if danboruu = "True" :
+    print("Danboruu hit!")
+    text += f"[Danboruu]({url_dan}) + "\n" + "*Title*" + " " + tex_dan + "\n*Creator*" + " " +  creator_dan + "\n*Material*" + " " + material_dan + "\n*Character*" + " " + character_dan + \n*Source*" + " " + f"[Danboruu]({source_dan}) 
+  else:
+     print("Danboruu not found..")
+  if pixiv = "True":
+     if danboruu = "True":
+      text += "Pixiv Url:" + " " + url_pix
+    else:
+      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + "Url:" + " " + url_pix + "\n" +  "Artist:" + " " + mem_pix)
+  bot.send_message(chat.id, text, reply_to_message_id = msg_id)
    
      
   
