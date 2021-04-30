@@ -29,7 +29,7 @@ def check_flood(update, context) -> str:
         return ""
     #chek = sql2.is_approved(chat.id, user.id) 
     # ignore admins and whitelists
-    if (is_user_admin(chat, user.id) or user.id in WOLVES or user.id in TIGERS or user.id in chek):
+    if (is_user_admin(chat, user.id) or user.id in WOLVES or user.id in TIGERS):
         sql.update_flood(chat.id, None)
         return ""
     elif sql2.is_approved(chat.id, user.id):
