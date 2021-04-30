@@ -109,7 +109,7 @@ def sauce(update: Update, context: CallbackContext ):
       pass
     danboruu = "True" 
   else:
-     pass
+    danboruu = "False"
   if rsupix == "True" :
      tex_pix = str(results[rsu2].title)
      url_pix = " ".join(results[rsu2].urls)
