@@ -56,7 +56,8 @@ def req(update: Update, context: CallbackContext):
   ms = message.reply_to_message
   user = update.effective_user 
   chat = update.effective_chat 
-  if not sql.get_chat_req_channel(chat.id)
+  if not sql.get_chat_req_channel(chat.id):
+    return
   message_id = update.effective_message.message_id
   if message.text.startswith("/req"):
     pass
