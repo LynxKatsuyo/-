@@ -37,7 +37,7 @@ def sauce(update: Update, context: CallbackContext ):
     return
   if reply:
     if reply.photo:
-      photo_id = reply.photo.file_id
+      photo_id = reply.photo[-1].file_id
       photo = "True" 
     elif reply.animation:
       gif_id = reply.animation.file_id
