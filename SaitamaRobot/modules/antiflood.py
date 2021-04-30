@@ -27,9 +27,12 @@ def check_flood(update, context) -> str:
     msg = update.effective_message  # type: Optional[Message]
     if not user:  # ignore channels
         return ""
-    chek = sql2.list_approved(msg.chat_id) 
+    #chek = sql2.is_approved(chat.id, user.id) 
     # ignore admins and whitelists
     if (is_user_admin(chat, user.id) or user.id in WOLVES or user.id in TIGERS or user.id in chek):
+        sql.update_flood(chat.id, None)
+        return ""
+    elif sql2.is_approved(chat.id, user.id):
         sql.update_flood(chat.id, None)
         return ""
 
