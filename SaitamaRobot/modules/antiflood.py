@@ -1,6 +1,6 @@
 import html
 from typing import Optional, List
-import SaitamaRobot.modules.sql.approve_sql as approved
+import SaitamaRobot.modules.sql.approve_sql as sql2
 from telegram import Message, Chat, Update, User, ChatPermissions
 
 from SaitamaRobot import TIGERS, WOLVES, dispatcher
@@ -27,7 +27,7 @@ def check_flood(update, context) -> str:
     msg = update.effective_message  # type: Optional[Message]
     if not user:  # ignore channels
         return ""
-    chek = approved.list_approved(chat.id) 
+    chek = sql2.list_approved(message.chat_id) 
     # ignore admins and whitelists
     if (is_user_admin(chat, user.id) or user.id in WOLVES or user.id in TIGERS or user.id in chek):
         sql.update_flood(chat.id, None)
