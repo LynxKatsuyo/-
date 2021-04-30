@@ -91,22 +91,32 @@ def sauce(update: Update, context: CallbackContext ):
     urdan = results[rsu].urls
     tit = urdan.pop()
     url_dan = " ".join(urdan)
-    if results[rsu].creator:
+    try:
       creator_dan = " ".join(results[rsu].creator)
-    if results[rsu].material:
+    except AttributeError:
+      pass
+    try: 
       material_dan = " ".join(results[rsu].material)
-    if results[rsu].source:
+    except AttributeError: 
+      pass
+    try:
       source_dan = " ".join(results[rsu].source)
-    if results[rsu].character:
+    except AttributeError:
+      pass
+    try:
       character_dan = " ".join(results[rsu].character)
+    except: 
+      pass
     danboruu = "True" 
   else:
      pass
   if rsupix == "True" :
      tex_pix = str(results[rsu2].title)
      url_pix = " ".join(results[rsu2].urls)
-     if results[rsu2].member_name:
+     try:
       mem_pix = " ".join(results[rsu2].member_name)
+     except:
+       pass
      pixiv = "True" 
   else:
      pass
