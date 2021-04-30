@@ -1,6 +1,7 @@
 from saucenao_api import SauceNao 
 from saucenao_api.params import DB
 
+from SaitamaRobot import dispatcher 
 from SaitamaRobot.modules.disable import (DisableAbleCommandHandler, DisableAbleMessageHandler) 
 from SaitamaRobot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
