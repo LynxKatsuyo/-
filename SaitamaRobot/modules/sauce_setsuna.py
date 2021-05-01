@@ -98,7 +98,7 @@ def sauce(update: Update, context: CallbackContext ):
     url_dan = " ".join(urdan)
     di = results[rsu].raw
     ik = di.get('data')
-    if not data == "None":
+    if not ik == "None":
       creator_dan = ik.get('creator') 
       material_dan = ik.get('material')
       source_dan = ik.get('source')
@@ -124,7 +124,7 @@ def sauce(update: Update, context: CallbackContext ):
      if danboruu == "True":
       text += f"[Pixiv Url]({url_pix})" 
      else:
-      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" + f"[Url]({url_pix})" + "\n" +  "Artist:" + " " + mem_pix)
+      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" +  "Artist:" + " " + mem_pix)
   #buttons made here 
   if pixiv == "True":
     url1 = url_pix
