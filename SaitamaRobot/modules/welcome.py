@@ -228,7 +228,7 @@ def new_member(update: Update, context: CallbackContext):
                 if chat.username:
                   markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = Link, url = f"https://t.me/{chat.username}")]])
                 else:
-                  markup = "None"
+                  markup = "False"
                 bot.send_message(
                         JOIN_LOGGER,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>"
