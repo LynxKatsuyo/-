@@ -229,21 +229,13 @@ def new_member(update: Update, context: CallbackContext):
                   markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = Link, url = f"https://t.me/{chat.username}")]])
                 else:
                   markup = "None"
-                if creator:
-                    bot.send_message(
-                        JOIN_LOGGER,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>\n<b>
-                        .format(
-                            html.escape(chat.title), chat.id,
-                        parse_mode=ParseMode.HTML)
-                else:
-                    bot.send_message(
+                bot.send_message(
                         JOIN_LOGGER,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>"
                         .format(html.escape(chat.title), chat.id), reply_markup = markup
                         parse_mode=ParseMode.HTML)
                 update.effective_message.reply_text(
-                    "Watashi ga kita!", reply_to_message_id=reply)
+                    "Oh a new adventure!!!, ya can't wait to tell Abhi-sama!!", reply_to_message_id=reply)
                 continue
 
             else:
