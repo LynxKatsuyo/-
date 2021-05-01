@@ -117,7 +117,7 @@ def sauce(update: Update, context: CallbackContext ):
   else:
      pass
   if danboruu == "True" :
-    text += f"*Title:*" {tex_dan} + "\n*Creator:*" + " " +  creator_dan + "\n*Material:*" + " " + material_dan + "\n*Character:*" + " " + character_dan  
+    text += "*Title:*" + " " + tex_dan + " " + "\n*Creator:*" + " " +  creator_dan + "\n*Material:*" + " " + material_dan + "\n*Character:*" + " " + character_dan  
   else:
      print("Danboruu not found..")
   if pixiv == "True":
