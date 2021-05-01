@@ -135,11 +135,7 @@ def sauce(update: Update, context: CallbackContext ):
   if url1_name == "Pixiv":
     url2 = url_dan
     url2_name = "Danboruu"
-  markup = InlineKeyboardMarkup([[
-    InlineKeyboardButton(
-      text = f"{url1_name}", url = f"{url1}")
-    InlineKeyboardButton(
-      text = f"{url2_name}", url = f" {url2}")]])
+  markup = InlineKeyboardMarkup([[InlineKeyboardButton(text = f"{url1_name}", url = f"{url1}")InlineKeyboardButton(text = f"{url2_name}", url = f" {url2}")]])
   bot.send_message(chat.id, text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
    
      
