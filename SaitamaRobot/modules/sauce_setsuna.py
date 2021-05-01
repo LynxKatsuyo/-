@@ -112,7 +112,7 @@ def sauce(update: Update, context: CallbackContext ):
      kek = results[rsu2].raw
      ti = kek.get('data')
      if not ti == 'data':
-       mem_pix = ti.get(member_name)
+       mem_pix = ti.get('member_name')
      pixiv = "True" 
   else:
      pass
