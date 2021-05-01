@@ -225,24 +225,22 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome yourself
             elif new_mem.id == bot.id:
                 chat = update.effective_chat
-                creator = None
-                for x in chat.get_administrators():
-                    if x.status == 'creator':
-                        creator = x.user
-                        break
+                if chat.username:
+                  markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = Link, url = f"https://t.me/{chat.username}")]])
+                else:
+                  markup = "None"
                 if creator:
                     bot.send_message(
                         JOIN_LOGGER,
-                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>\n<b>Creator:</b> <code>{}</code>"
+                        "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>\n<b>
                         .format(
                             html.escape(chat.title), chat.id,
-                            html.escape(creator)),
                         parse_mode=ParseMode.HTML)
                 else:
                     bot.send_message(
                         JOIN_LOGGER,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>"
-                        .format(html.escape(chat.title), chat.id),
+                        .format(html.escape(chat.title), chat.id), reply_markup = markup
                         parse_mode=ParseMode.HTML)
                 update.effective_message.reply_text(
                     "Watashi ga kita!", reply_to_message_id=reply)
