@@ -99,7 +99,7 @@ def sauce(update: Update, context: CallbackContext ):
     di = results[rsu].raw
     ik = di.get('data')
     if not data == "None":
-      creator_dan = ik.get('creator'
+      creator_dan = ik.get('creator') 
       material_dan = ik.get('material')
       source_dan = ik.get('source')
       character_dan = ik.get('characters')
