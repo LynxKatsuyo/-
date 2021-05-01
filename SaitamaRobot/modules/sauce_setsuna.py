@@ -132,7 +132,7 @@ def sauce(update: Update, context: CallbackContext ):
   elif danboruu == "True":
     url1 = url_dan
     url1_name = "Danboruu"
-  if url1 = url_pix:
+  if url1_name = "Pixiv":
     url2 = url_dan
     url2_name = "Danboruu"
   markup = InlineKeyboardMarkup([[
