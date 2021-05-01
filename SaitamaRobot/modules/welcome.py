@@ -232,7 +232,7 @@ def new_member(update: Update, context: CallbackContext):
                 bot.send_message(
                         JOIN_LOGGER,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>"
-                        .format(html.escape(chat.title), chat.id), reply_markup = markup
+                        .format(html.escape(chat.title), chat.id), reply_markup = markup, 
                         parse_mode=ParseMode.HTML)
                 update.effective_message.reply_text(
                     "Oh a new adventure!!!, ya can't wait to tell Abhi-sama!!", reply_to_message_id=reply)
