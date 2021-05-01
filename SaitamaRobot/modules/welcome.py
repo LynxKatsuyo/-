@@ -226,7 +226,7 @@ def new_member(update: Update, context: CallbackContext):
             elif new_mem.id == bot.id:
                 chat = update.effective_chat
                 if chat.username:
-                  markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = Link, url = f"https://t.me/{chat.username}")]])
+                  markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = "Link" , url = f"https://t.me/{chat.username}")]])
                 else:
                   markup = "False"
                 bot.send_message(
