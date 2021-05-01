@@ -224,9 +224,9 @@ def new_member(update: Update, context: CallbackContext):
 
             # Welcome yourself
             elif new_mem.id == bot.id:
+                chat = update.effective_chat.id
                 creator = None
-                for x in bot.bot.get_chat_administrators(
-                        update.effective_chat.id):
+                for x in bot.chat.get_chat_administrators:
                     if x.status == 'creator':
                         creator = x.user
                         break
