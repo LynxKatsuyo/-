@@ -111,7 +111,7 @@ def sauce(update: Update, context: CallbackContext ):
      url_pix = " ".join(results[rsu2].urls)
      kek = results[rsu2].raw
      ti = kek.get('data')
-     if not ti == 'data':
+     if not ti == 'None':
        mem_pix = ti.get('member_name')
      pixiv = "True" 
   else:
