@@ -117,14 +117,11 @@ def sauce(update: Update, context: CallbackContext ):
   else:
      pass
   if danboruu == "True" :
-    text += "*Title:*" + " " + tex_dan + " " + "\n*Creator:*" + " " +  creator_dan + "\n*Material:*" + " " + material_dan + "\n*Character:*" + " " + character_dan  + " "
+    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " "
   else:
      print("Danboruu not found..")
   if pixiv == "True":
-     if danboruu == "True":
-      text += f"[Pixiv Url]({url_pix})" 
-     else:
-      text += ("Source: Pixiv" + "\n" + "Title:" + " " + tex_pix + "\n" +  "Artist:" + " " + mem_pix)
+      text += ( "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*")
   #buttons made here 
   if pixiv == "True":
     url1 = url_pix
