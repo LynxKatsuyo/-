@@ -226,14 +226,18 @@ def new_member(update: Update, context: CallbackContext):
             elif new_mem.id == bot.id:
                 chat = update.effective_chat
                 if chat.username:
+                  mark = "True"
                   markup = InlineKeyboardMarkup ([[InlineKeyboardButton(text = "Link" , url = f"https://t.me/{chat.username}")]])
                 else:
-                  markup = "False"
-                bot.send_message(
+                  mark = "False"
+                if mark == "True":
+                  bot.send_message(
                         JOIN_LOGGER,
                         "#NEW_GROUP\n<b>Group name:</b> {}\n<b>ID:</b> <code>{}</code>"
                         .format(html.escape(chat.title), chat.id), reply_markup = markup, 
                         parse_mode=ParseMode.HTML)
+                 else:
+                   bot.send_message(JOIN_LOGGER, "*#NEW_GROUP*\n*Group Name:* {}\n*Id:*`{}`").format(chat.title, chat.id), parse_mode = ParseMode.MARKDOWN) 
                 update.effective_message.reply_text(
                     "Oh a new adventure!!!, ya can't wait to tell Abhi-sama!!", reply_to_message_id=reply)
                 continue
