@@ -94,7 +94,8 @@ def getsticker(update: Update, context: CallbackContext):
           im = im.resize(sizenew)
         else:
           im.thumbnail(maxsize)
-        kek = open("poto.png", 'rb')
+        hek = im.save("sizee.png", "PNG")
+        kek = open("sizee.png", 'rb')
         bot.send_document(chat_id, document = kek, reply_to_message_id = msg.message_id)
         os.remove("poto.png")
     else:
