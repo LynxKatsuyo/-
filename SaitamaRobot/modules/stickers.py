@@ -75,7 +75,7 @@ def getsticker(update: Update, context: CallbackContext):
         bob = open(heck, 'rb')
         bot.send_sticker(chat_id, sticker = bob, reply_to_message_id = msg.message_id)
         kek = os.rename(heck, "poto.png")
-        tit = open(kek, 'rb')
+        tit = open("poto.png", 'rb')
         bot.send_document(chat_id, document = tit, reply_to_message_id = msg.message_id)
         os.remove("poto.png")
     else:
