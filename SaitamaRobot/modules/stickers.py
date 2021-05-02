@@ -75,12 +75,30 @@ def getsticker(update: Update, context: CallbackContext):
         bob = open(heck, 'rb')
         bot.send_sticker(chat_id, sticker = bob, reply_to_message_id = msg.message_id)
         kek = os.rename(heck, "poto.png")
-        tit = open("poto.png", 'rb')
-        bot.send_document(chat_id, document = tit, reply_to_message_id = msg.message_id)
+        maxsize = (512, 512)
+        im = Image.open("poto.png")
+        if (im.width and im.height) < 512:
+          size1 = im.width
+          size2 = im.height
+          if im.width > im.height:
+            scale = 512 / size1
+            size1new = 512
+            size2new = size2 * scale
+          else:
+            scale = 512 / size2
+            size1new = size1 * scale
+            size2new = 512
+          size1new = math.floor(size1new)
+          size2new = math.floor(size2new)
+          sizenew = (size1new, size2new)
+          im = im.resize(sizenew)
+        else:
+          im.thumbnail(maxsize)
+        bot.send_document(chat_id, document = im, reply_to_message_id = msg.message_id)
         os.remove("poto.png")
     else:
         update.effective_message.reply_text(
-            "Please reply to a sticker for me to upload its PNG.")
+            "Please reply to a stickeror a photo for me to upload its PNG.")
 
 
 @run_async
