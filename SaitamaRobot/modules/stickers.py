@@ -69,8 +69,8 @@ def getsticker(update: Update, context: CallbackContext):
         bot.send_document(chat_id, document=open("sticker.png", "rb"))
         os.remove("sticker.png")
     elif msg.reply_to_message and msg.reply_to_message.photo:
-        file_id = msg.reply_to_message.photo.file_id
-        pic =bot.get_file(file_id[-1])
+        file_id = msg.reply_to_message.photo[-1].file_id
+        pic =bot.get_file(file_id)
         heck = pic.download("poto.webp")
         bob = open(heck, 'rb')
         bot.send_sticker(chat_id, sticker = bob, reply_to_message_id = msg.id)
