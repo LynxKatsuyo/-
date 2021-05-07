@@ -182,8 +182,7 @@ def sauce(update: Update, context: CallbackContext ):
     keybo.append(InlineKeyboardButton(text = "Danboru", url = url_dan))
   if rsuAnime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
-  keybo2 = " ".join(keybo)
-  markup = InlineKeyboardMarkup([[keybo2]])
+  markup = InlineKeyboardMarkup(keybo)
   bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
    
      
