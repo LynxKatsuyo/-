@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
-#import cv2
+import cv2
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
@@ -64,7 +64,7 @@ def sauce(update: Update, context: CallbackContext ):
       cam = cv2.VideoCapture(dl)
       frame = cam.read()
       tu = cv2.imwrite("Sc2.jpg", frame)
-      oo = open(tu, 'wb')
+      oo = open(dl, 'rb')
       results = sauce.from_file(oo)
       cam.release() 
       os.remove(dl)
