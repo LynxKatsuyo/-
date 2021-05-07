@@ -70,23 +70,23 @@ def sauce(update: Update, context: CallbackContext ):
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, pix_simi, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
   for i in ru:
-    if i = 9:
+    if i == 9:
       rsudan = "True"
       rsu = ruu.index(i)
     else:
       rsudan = "False"
-    if i = 5:
+    if i == 5:
       rsupix = "True"
       rsu2 = ruu.index(i)
     else:
       rsupix = "True"
-    if i = 21:
+    if i == 21:
       rsuAnime = "True"
       rsu3 = ruu.index(i)
-    if i = 18:
+    if i == 18:
       rsu_nhen = "True"
       rsu4 = ruu.index(i)
-    if i = 22:
+    if i == 22:
       rsu_hentai = "True"
       rsu5 = ruu.index(i)
       
