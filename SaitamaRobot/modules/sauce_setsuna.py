@@ -72,23 +72,23 @@ def sauce(update: Update, context: CallbackContext ):
     rsu, rsu2, rsu3, rsu4, rsu5 = " ", " ", " ", " ", " "
     if i == 9:
       rsudan = "True"
-      rsu = ru.index(i)
+      rsu = int(ru.index(i)) 
     else:
       rsudan = "False"
     if i == 5:
       rsupix = "True"
-      rsu2 = ru.index(i)
+      rsu2 = int(ru.index(i)) 
     else:
       rsupix = "True"
     if i == 21:
       rsuAnime = "True"
-      rsu3 = ru.index(i)
+      rsu3 = int(ru.index(i)) 
     if i == 18:
       rsu_nhen = "True"
-      rsu4 = ru.index(i)
+      rsu4 = int(ru.index(i)) 
     if i == 22:
       rsu_hentai = "True"
-      rsu5 = ru.index(i)
+      rsu5 = int(ru.index(i)) 
       
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
