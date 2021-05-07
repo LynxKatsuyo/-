@@ -156,31 +156,31 @@ def sauce(update: Update, context: CallbackContext ):
      pixiv = "False"
   
   
-  if anime == "True":
+  if rsuAnime == "True":
     text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
     print(text)
     
-  if danboru == "True" :
+  if rsudan == "True" :
     text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
     print(text)
 
-  if pixiv == "True":
-    if anime == "True":
+  if rsupix == "True":
+    if rsuAnime == "True":
       pass
-    if danboru == "True":
+    if rsudan == "True":
       pass 
       text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}"
     print(tex)
   
-  #if text == " ":
-    #text = "Sorry Not found!!, Setsuna sad... reeeee"
+  if text == " ":
+    text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
   keybo = []
-  if pixiv == "True":
+  if rsupix == "True":
     keybo.append(InlineKeyboardButton(text = "Pixiv", url = url_pix))
-  if danboru == "True":
+  if rsudan == "True":
     keybo.append(InlineKeyboardButton(text = "Danboru", url = url_dan))
-  if anime == "True":
+  if rsuAnime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   markup = InlineKeyboardMarkup(inline_keyboard=keybo)
   bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
