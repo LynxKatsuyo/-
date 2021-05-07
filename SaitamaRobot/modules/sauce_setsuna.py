@@ -202,7 +202,7 @@ def sauce(update: Update, context: CallbackContext ):
     print(text)
     
   if rsudan == "True" :
-    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + "\n\n" + "*Similarity: " + " " + f"{dan_simi}*" 
+    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n*Material:*" + " " + f" *{material_dan}*" + "\n*Character:*" + " " + f"*{character_dan}*" + "\n" + "*Similarity: " + " " + f"{dan_simi}*" 
     print(text)
 
   if rsupix == "True":
@@ -210,7 +210,7 @@ def sauce(update: Update, context: CallbackContext ):
       pass
     if rsudan == "True":
       pass 
-    text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}"
+    text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n" +  "*Artist:*" + " " + f"*{mem_pix}*\n" + f"*Similarity: {simi_pix}*"
   
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
