@@ -149,7 +149,7 @@ def sauce(update: Update, context: CallbackContext ):
     text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
 
   if pixiv == "True":
-    if danboruu = "True":
+    if danboruu == "True":
       pass 
       text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + "'Similarity: " + ""
   if text = " ":
