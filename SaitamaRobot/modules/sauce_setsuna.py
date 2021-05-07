@@ -59,35 +59,39 @@ def sauce(update: Update, context: CallbackContext ):
       results = sauce.from_file(oo)
     else:
       return
-  rsu_1  = int(results[0].index_id) 
-  rsu_2 = int(results[1].index_id)
-  rsu_3 = int(results[2].index_id)
+  ru = []
+  rsu_1  = ru.append(int(results[0].index_id))
+  rsu_2 = ru.append(int(results[1].index_id))
+  rsu_3 = ru.append(int(results[2].index_id))
+  rsu_4 = ru.append(int(results[4]).index_id))
+  rsu_5 = ru.append(int(results[5].index_id))
+  rsu_6 = ru.append(int(results[6].index_id))
   text = " "
   markup = " "
-  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix = " ", " ", " ", " ", " ", " ", " ", " ", " "
-  if rsu_1 == 9:
-    rsudan = "True" 
-    rsu = 0 
-  elif rsu_2 == 9:
-    rsudan = "True" 
-    rsu = 1
-  elif rsu_3 == 9:
-    rsudan = "True"  
-    rsu = 2
-  else:
-    rsudan = "False"
-  if rsu_1 == 5:
-    rsupix = "True" 
-    rsu2 = 0
-  elif rsu_2 == 5:
-    rsupix = "True"  
-    rsu2 = 1 
-  elif rsu_3 == 5:
-    rsupix ="True" 
-    rsu2 = 2 
-  else:
-    rsupix = "False"
+  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, pix_simi, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
+  for i in ru:
+    if i = 9:
+      rsudan = "True"
+      rsu = ruu.index(i)
+    else:
+      rsudan = "False"
+    if i = 5:
+      rsupix = "True"
+      rsu2 = ruu.index(i)
+    else:
+      rsupix = "True"
+    if i = 21:
+      rsuAnime = "True"
+      rsu3 = ruu.index(i)
+    if i = 18:
+      rsu_nhen = "True"
+      rsu4 = ruu.index(i)
+    if i = 22:
+      rsu_hentai = "True"
+      rsu5 = ruu.index(i)
+      
   if rsudan == "True" :
+    dan_simi = str(results[rsu].similarity)
     tex_dan = str(results[rsu].title)
     urdan = results[rsu].urls
     try:
@@ -103,10 +107,12 @@ def sauce(update: Update, context: CallbackContext ):
       material_dan = ik.get('material')
       source_dan = ik.get('source')
       character_dan = ik.get('characters')
-      danboruu = "True" 
+   danboruu = "True" 
   else:
     danboruu = "False"
+    
   if rsupix == "True" :
+     simi_pix == str(results[rsu2].similarity) 
      tex_pix = str(results[rsu2].title)
      url_pix = " ".join(results[rsu2].urls)
      kek = results[rsu2].raw
@@ -116,23 +122,47 @@ def sauce(update: Update, context: CallbackContext ):
      pixiv = "True" 
   else:
      pass
-  if danboruu == "True" :
-    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " "
+  
+  if rsuAnime = "True":
+    raww = results[rsu4].raw
+    anime_url = results[rsu4].urls
+    try:
+      anime_url = anime_url[0]
+    except IndexError:
+      pass 
+    simi = str(results[rsu4].similarity) 
+    deta = raww.get('data')
+    anime_title = deta.get('source') 
+    anime_ep = deta.get('part')
+    anime_year = deta.get('year')
+    anime_timestamp = deta.get('est-time')
+    anime = "True"
   else:
-     print("Danboruu not found..")
+    pass
+  
+  if anime == "True":
+    text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
+    
+  if danboruu == "True" :
+    if anime == "True":
+      pass 
+    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
+
   if pixiv == "True":
-      text += ( "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*")
+    if danboruu = "True":
+      pass 
+      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + "'Similarity: " + ""
+  if text = " ":
+    text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
+  keybo = []
   if pixiv == "True":
-    url1 = url_pix
-    url1_name = "Pixiv"
-  elif danboruu == "True":
-    url1 = url_dan
-    url1_name = "Danboruu"
-  if url1_name == "Pixiv":
-    url2 = url_dan
-    url2_name = "Danboruu"
-  markup = InlineKeyboardMarkup([[InlineKeyboardButton(text = f"{url1_name}", url = f"{url1}")]])
+    keybo.append(InlineKeyboardButton(text = "Pixiv", url = url_pix))
+  if danboruu == "True":
+    keybo.append(InlineKeyboardButton(text = "Danboruu", url = url_dan))
+  if anime == "True":
+    keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
+  markup = InlineKeyboardMarkup([[keybo] ])
   bot.send_message(chat.id, text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
    
      
