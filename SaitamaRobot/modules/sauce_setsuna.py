@@ -177,9 +177,9 @@ def sauce(update: Update, context: CallbackContext ):
   #buttons made here 
   keybo = []
   if rsupix == "True":
-    keybo.append(InlineKeyboardButton(text = "Pixiv", url = url_pix))
+    keybo.append([InlineKeyboardButton(text = "Pixiv", url = url_pix)])
   if rsudan == "True":
-    keybo.append(InlineKeyboardButton(text = "Danboru", url = url_dan))
+    keybo.append([InlineKeyboardButton(text = "Danboru", url = url_dan)])
   if rsuAnime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if len(keybo) >= 0:
