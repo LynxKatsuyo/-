@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
-import cv2
+#import cv2
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
@@ -217,6 +217,8 @@ def sauce(update: Update, context: CallbackContext ):
      print("Pixiv not found or retrieving unsuccessful")
   
   if vid == "True":
+    if rsuAnime == "True":
+      pass 
     text += f"*Title: {vid_title}\n\nEpisode: {vid_ep} \nYear: {vid_year} \nTimestamp: {vid_timestamp}*"
     
   if rsuAnime == "True":
