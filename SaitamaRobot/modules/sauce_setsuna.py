@@ -170,7 +170,7 @@ def sauce(update: Update, context: CallbackContext ):
     anime_title = deta.get('source') 
     anime_ep = deta.get('part')
     anime_year = deta.get('year')
-    anime_timestamp = deta.get('est-time')
+    anime_timestamp = deta.get('est_time' )
     print("Anime retrieving successful...")
   else:
     print("Anime not found or retrieving unsuccessful")
@@ -190,7 +190,7 @@ def sauce(update: Update, context: CallbackContext ):
   
   
   if rsuAnime == "True":
-    text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *\n\n"
+    text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp: {anime_timestamp} *\n\n"
     print(text)
     
   if rsudan == "True" :
@@ -203,7 +203,6 @@ def sauce(update: Update, context: CallbackContext ):
     if rsudan == "True":
       pass 
       text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}"
-    print(tex)
   
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
