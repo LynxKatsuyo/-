@@ -123,7 +123,7 @@ def sauce(update: Update, context: CallbackContext ):
   else:
      pass
   
-  if rsuAnime = "True":
+  if rsuAnime == "True":
     raww = results[rsu4].raw
     anime_url = results[rsu4].urls
     try:
