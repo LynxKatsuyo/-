@@ -36,6 +36,8 @@ def sauce(update: Update, context: CallbackContext ):
   if not reply:
     msg.reply_text("Reply to something baka...")
     return
+  photo = "False"
+  gif = "False"
   if reply:
     if reply.photo:
       photo_id = reply.photo[-1].file_id
