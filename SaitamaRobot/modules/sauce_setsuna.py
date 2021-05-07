@@ -67,7 +67,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_5 = ru.append(int(results[5].index_id))
   text = " "
   markup = " "
-  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, pix_simi, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
+  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
   for i in ru:
     if i == 9:
       rsudan = "True"
@@ -148,9 +148,11 @@ def sauce(update: Update, context: CallbackContext ):
     text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
 
   if pixiv == "True":
+    if anime == "True":
+      pass
     if danboru == "True":
       pass 
-      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + "'Similarity: " + ""
+      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}" 
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
