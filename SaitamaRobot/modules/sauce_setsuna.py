@@ -61,50 +61,78 @@ def sauce(update: Update, context: CallbackContext ):
     else:
       return
   ru = []
-  rsu_1  = ru.append(int(results[0].index_id)) 
-  rsu_2 = ru.append(int(results[1].index_id))
-  rsu_3 = ru.append(int(results[2].index_id))
-  rsu_4 = ru.append(int(results[4].index_id))
-  #rsu_5 = ru.append(int(results[5].index_id))
+  rsu_1  = int(results[0].index_id) 
+  rsu_2 = int(results[1].index_id)
+  rsu_3 = int(results[2].index_id)
+  rsu_4 = int(results[3].index_id) 
+  rsu_5 = int(results[4].index_id)
+  rsu_6 = int(results[5]).index_id) 
   text = " "
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
-  for i in ru:
-    rsu, rsu2, rsu3, rsu4, rsu5 = " ", " ", " ", " ", " "
-    rsu_hentai = "False"
-    rsuAnime = "False"
-    rsu_nhen = "False"
-    rsupix = "False"
-    rsudan = "False"
-    if i == 9:
-      rsudan = "True"
-      rsu = int(ru.index(i)) 
-      print("Danboruu hit...")
-    else:
-      rsudan = "False"
-    if i == 5:
-      rsupix = "True"
-      rsu2 = int(ru.index(i)) 
-      print("Pixiv hit... ")
-    else:
-      rsupix = "False"
-    if i == 21:
-      rsuAnime = "True"
-      rsu3 = int(ru.index(i))
-      print("Anime hit... ")
-    else:
-      rsuAnime = "False"
-    if i == 18:
-      rsu_nhen = "True"
-      rsu4 = int(ru.index(i)) 
-    else:
-      rsu_nhen = "False"
-    if i == 22:
-      rsu_hentai = "True"
-      rsu5 = int(ru.index(i)) 
-    else:
-      rsu_hentai = "False"
-      
+  if rsu_1 == 9:
+    rsudan = "True"
+    rsu = 0 
+  elif rsu_2 == 9:
+    rsudan = "True"
+    rsu = 1
+  elif rsu_3 == 9:
+    rsudan = "True"
+    rsu = 2 
+  elif rsu_4 == 9:
+    rsudan = "True"
+    rsu = 3 
+  elif rsu_5 == 9:
+    rsudan = "True"
+    rsu = 4 
+  elif rsu_6 == 9:
+    rsudan = "True"
+    rsu = 5 
+  else:
+    print("Danboruu not found")
+    
+  if rsu_1 == 5:
+    rsupix = "True"
+    rsu2 = 0
+  elif rsu_2 == 5:
+    rsupix = "True"
+    rsu2 = 1
+  elif rsu_3 == 5:
+    rsupix = "True"
+    rsu2 = 2
+  elif rsu_4 == 5:
+    rsupix = "True"
+    rsu2 = 3
+  elif rsu_5 == 5:
+    rsupix = "True"
+    rsu2 = 4
+  elif rsu_6 == 5:
+    rsupix = "True"
+    rsu2 = 5
+  else:
+    print("Pixiv not found...")
+    
+  if rsu_1 == 21:
+    rsuAnime = "True"
+    rsu3 = 0 
+  elif rsu_2 == 21:
+    rsuAnime = "True"
+    rsu3 = 1
+  elif rsu_3 == 21:
+    rsuAnime = "True"
+    rsu3 = 2
+  elif rsu_4 == 21:
+    rsuAnime = "True"
+    rsu3 = 3
+  elif rsu_5 == 21:
+    rsuAnime = "True"
+    rsu3 = 4
+  elif rsu_6 == 21:
+    rsuAnime = "True"
+    rsu3 = 5
+  else:
+    print("Not found on Anime..")
+    
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
     tex_dan = str(results[rsu].title)
