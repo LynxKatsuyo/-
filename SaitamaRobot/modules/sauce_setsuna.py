@@ -71,23 +71,23 @@ def sauce(update: Update, context: CallbackContext ):
   for i in ru:
     if i == 9:
       rsudan = "True"
-      rsu = ruu.index(i)
+      rsu = ru.index(i)
     else:
       rsudan = "False"
     if i == 5:
       rsupix = "True"
-      rsu2 = ruu.index(i)
+      rsu2 = ru.index(i)
     else:
       rsupix = "True"
     if i == 21:
       rsuAnime = "True"
-      rsu3 = ruu.index(i)
+      rsu3 = ru.index(i)
     if i == 18:
       rsu_nhen = "True"
-      rsu4 = ruu.index(i)
+      rsu4 = ru.index(i)
     if i == 22:
       rsu_hentai = "True"
-      rsu5 = ruu.index(i)
+      rsu5 = ru.index(i)
       
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
@@ -106,9 +106,9 @@ def sauce(update: Update, context: CallbackContext ):
       material_dan = ik.get('material')
       source_dan = ik.get('source')
       character_dan = ik.get('characters')
-    danboruu = "True" 
+    danboru = "True" 
   else:
-    danboruu = "False"
+    danboru = "False"
     
   if rsupix == "True" :
      simi_pix == str(results[rsu2].similarity) 
@@ -142,13 +142,13 @@ def sauce(update: Update, context: CallbackContext ):
   if anime == "True":
     text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
     
-  if danboruu == "True" :
+  if danboru == "True" :
     if anime == "True":
       pass 
     text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
 
   if pixiv == "True":
-    if danboruu == "True":
+    if danboru == "True":
       pass 
       text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + "'Similarity: " + ""
   if text == " ":
@@ -157,8 +157,8 @@ def sauce(update: Update, context: CallbackContext ):
   keybo = []
   if pixiv == "True":
     keybo.append(InlineKeyboardButton(text = "Pixiv", url = url_pix))
-  if danboruu == "True":
-    keybo.append(InlineKeyboardButton(text = "Danboruu", url = url_dan))
+  if danboru == "True":
+    keybo.append(InlineKeyboardButton(text = "Danboru", url = url_dan))
   if anime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   markup = InlineKeyboardMarkup([[keybo] ])
