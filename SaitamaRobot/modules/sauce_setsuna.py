@@ -210,7 +210,7 @@ def sauce(update: Update, context: CallbackContext ):
       pass
     if rsudan == "True":
       pass 
-      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}"
+    text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}"
   
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
