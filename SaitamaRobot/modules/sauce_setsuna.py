@@ -23,7 +23,7 @@ from telegram.utils.helpers import mention_html
 def sauce(update: Update, context: CallbackContext ):
   results = " "
   API = "6851aa2ae17da0042a7b02af3f7a1c55485ceafc"
-  sauce = SauceNao(api_key=API, db = 999)
+  sauce = SauceNao(api_key=API, db = 999, numres = 6)
   bot = context.bot 
   msg = update.effective_message 
   msg_id = update.effective_message.message_id 
