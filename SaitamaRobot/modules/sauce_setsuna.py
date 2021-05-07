@@ -83,12 +83,18 @@ def sauce(update: Update, context: CallbackContext ):
     if i == 21:
       rsuAnime = "True"
       rsu3 = int(ru.index(i)) 
+    else:
+      rsuAnime == "False"
     if i == 18:
       rsu_nhen = "True"
       rsu4 = int(ru.index(i)) 
+    else:
+      rsu_nhen = "False"
     if i == 22:
       rsu_hentai = "True"
       rsu5 = int(ru.index(i)) 
+    else:
+      rsu_hentai = "False"
       
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
@@ -118,7 +124,7 @@ def sauce(update: Update, context: CallbackContext ):
       anime_url = anime_url[0]
     except IndexError:
       pass 
-    simi = str(results[rsu4].similarity) 
+    simi = str(results[rsu3].similarity) 
     deta = raww.get('data')
     anime_title = deta.get('source') 
     anime_ep = deta.get('part')
