@@ -1,4 +1,4 @@
-from saucenao_api import SauceNao 
+from saucenao_api import SauceNao, VideoSauce, BookSauce
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
@@ -59,7 +59,7 @@ def sauce(update: Update, context: CallbackContext ):
     elif gif == "True" :
       file = bot.get_file(gif_id)
       dl = file.download(filename_gif)
-      oo = open(dl, 'rb')
+      oo = open(dl, 'wb')
       results = sauce.from_file(oo)
     else:
       return
@@ -72,7 +72,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_6 = int(results[5].index_id) 
   text = " "
   markup = " "
-  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
+  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep, vid_url, vid_ep, vid_title, vid_year, vid_timestamp, vid_source= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
   mal_url = "False"
   rsudan = "False"
   rsupix = "False"
@@ -140,6 +140,17 @@ def sauce(update: Update, context: CallbackContext ):
     rsu3 = 5
   else:
     print("Not found on Anime..")
+  
+  vid = "False"
+  if isinstance(results[0], VideoSauce):
+    vid_title = results[0].title 
+    vid_ep = results[0].part
+    vid_year = results[0].year
+    rl = results[0].urls
+    vid_url =" ".join(rl) 
+    vid_source = results[0].index_name
+    vid_timestamp = results[0].est_time
+    vid = "True"
     
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
@@ -198,7 +209,9 @@ def sauce(update: Update, context: CallbackContext ):
   else:
      print("Pixiv not found or retrieving unsuccessful")
   
-  
+  if vid == "True":
+    text += f"*Title: {vid_title}\n\nEpisode: {vid_ep} \nYear: {vid_year} \nTimestamp: {vid_timestamp}*"
+    
   if rsuAnime == "True":
     text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp: {anime_timestamp} *\n\n"
     print(text)
@@ -226,6 +239,8 @@ def sauce(update: Update, context: CallbackContext ):
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if not mal_url == "False":
     keybo.append([InlineKeyboardButton(text = "MAL", url = mal_url)])
+  if not vid_url == " ":
+    keybo.append([InlineKeyboardButton(text = vid_source, url = vid_url)])
   if len(keybo) >= 0:
     markup = InlineKeyboardMarkup(keybo)
     bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
