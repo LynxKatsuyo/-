@@ -33,7 +33,7 @@ def sauce(update: Update, context: CallbackContext ):
   filename_gif = "saucey.gif" 
   bot.send_chat_action(chat.id, action = 'typing')
   if not reply:
-    bot.send_message(chat.id, "Reply to something baka...")
+    msg.reply_text("Reply to something baka...")
     return
   if reply:
     if reply.photo:
@@ -65,7 +65,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_2 = ru.append(int(results[1].index_id))
   rsu_3 = ru.append(int(results[2].index_id))
   rsu_4 = ru.append(int(results[4].index_id))
-  rsu_5 = ru.append(int(results[5].index_id))
+  #rsu_5 = ru.append(int(results[5].index_id))
   text = " "
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
