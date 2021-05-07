@@ -1,4 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
+import cv2
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
@@ -59,7 +60,10 @@ def sauce(update: Update, context: CallbackContext ):
     elif gif == "True" :
       file = bot.get_file(gif_id)
       dl = file.download(filename_gif)
-      oo = open(dl, 'wb')
+      cam = cv2.VideoCapture(dl)
+      frame = cam.read()
+      tu = cv2.imwrite("Sc2.jpg", frame)
+      oo = open(tu, 'wb')
       results = sauce.from_file(oo)
     else:
       return
