@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
-import cv2
+#import cv2
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
