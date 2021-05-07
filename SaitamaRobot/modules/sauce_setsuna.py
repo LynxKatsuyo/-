@@ -112,8 +112,8 @@ def sauce(update: Update, context: CallbackContext ):
     danboru = "False"
     
   if rsuAnime == "True":
-    raww = results[rsu4].raw
-    anime_url = results[rsu4].urls
+    raww = results[rsu3].raw
+    anime_url = results[rsu3].urls
     try:
       anime_url = anime_url[0]
     except IndexError:
