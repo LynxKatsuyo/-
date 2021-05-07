@@ -74,16 +74,19 @@ def sauce(update: Update, context: CallbackContext ):
     if i == 9:
       rsudan = "True"
       rsu = int(ru.index(i)) 
+      print("Danboruu hit...")
     else:
       rsudan = "False"
     if i == 5:
       rsupix = "True"
       rsu2 = int(ru.index(i)) 
+      print("Pixiv hit... ")
     else:
       rsupix = "False"
     if i == 21:
       rsuAnime = "True"
-      rsu3 = int(ru.index(i)) 
+      rsu3 = int(ru.index(i))
+      print("Anime hit... ")
     else:
       rsuAnime = "False"
     if i == 18:
@@ -179,7 +182,7 @@ def sauce(update: Update, context: CallbackContext ):
   if anime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   markup = InlineKeyboardMarkup(inline_keyboard=keybo)
-  bot.send_message(chat.id, text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
+  bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
    
      
   
