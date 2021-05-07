@@ -230,9 +230,18 @@ def sauce(update: Update, context: CallbackContext ):
   else:
     msg.reply_text(text, parse_mode = ParseMode.MARKDOWN)
      
-  
+ 
+__help__ = """
+*Ketchup Bottle*
+
+Its simple, reply /sauce to any picture to get the source of the image or what anime it is..., it works 90% of the time... and will be bringing gif suace too!!! Nyah!! 
+
+If something goes wrong please report @SetsunaBotSupport 
+"""
 SAUCE_HANDLER = DisableAbleCommandHandler("sauce", sauce) 
 dispatcher.add_handler(SAUCE_HANDLER)
     
-    
+__mod_name__ = "Sauce"   
+__command_list__ = ["sauce"]
+__handlers__ = [SAUCE_HANDLER]
       
