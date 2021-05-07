@@ -31,6 +31,7 @@ def sauce(update: Update, context: CallbackContext ):
   reply = msg.reply_to_message
   filename_photo = "saucey.png"
   filename_gif = "saucey.gif" 
+  bot.send_chat_action(chat.id, action = 'typing')
   if not reply:
     bot.send_message(chat.id, "Reply to something baka...")
     return
@@ -155,8 +156,6 @@ def sauce(update: Update, context: CallbackContext ):
     text = f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
     
   if danboru == "True" :
-    if anime == "True":
-      pass 
     text = "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
 
   if pixiv == "True":
@@ -166,8 +165,8 @@ def sauce(update: Update, context: CallbackContext ):
       pass 
       text =  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}" 
   
-  if text == " ":
-    text = "Sorry Not found!!, Setsuna sad... reeeee"
+  #if text == " ":
+    #text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
   keybo = []
   if pixiv == "True":
