@@ -1,4 +1,5 @@
 from saucenao_api import SauceNao 
+import jikanpy
 from saucenao_api.params import DB
 import os
 from SaitamaRobot import dispatcher 
@@ -70,6 +71,7 @@ def sauce(update: Update, context: CallbackContext ):
   text = " "
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
+  mal_url = "False"
   rsudan = "False"
   rsupix = "False"
   rsuAnime = "False"
@@ -172,6 +174,12 @@ def sauce(update: Update, context: CallbackContext ):
     anime_year = deta.get('year')
     anime_timestamp = deta.get('est_time' )
     print("Anime retrieving successful...")
+    heh = Jikan()
+    kek = heh.search('anime', anime_title, page=1)
+    if kek:
+      mal_url = kek['results'][0]['url']
+    else:
+      mal_url = "False"
   else:
     print("Anime not found or retrieving unsuccessful")
   
@@ -214,6 +222,8 @@ def sauce(update: Update, context: CallbackContext ):
     keybo.append([InlineKeyboardButton(text = "Danboru", url = url_dan)])
   if rsuAnime == "True":
     keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
+  if not mal_url = "False":
+    keybo.append([InlineKeyboardButton(text = "MAL", url = mal_url)])
   if len(keybo) >= 0:
     markup = InlineKeyboardMarkup(keybo)
     bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
