@@ -132,7 +132,7 @@ def sauce(update: Update, context: CallbackContext ):
     anime_timestamp = deta.get('est-time')
     anime = "True"
   else:
-    pass
+    anime = "False"
   
   if rsupix == "True" :
      url_pix = " ".join(results[rsu2].urls)
@@ -148,7 +148,7 @@ def sauce(update: Update, context: CallbackContext ):
        mem_pix = ti.get('member_name')
      pixiv = "True" 
   else:
-     pass
+     pixiv = "False"
   
   
   if anime == "True":
