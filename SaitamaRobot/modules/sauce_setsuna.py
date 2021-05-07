@@ -84,7 +84,7 @@ def sauce(update: Update, context: CallbackContext ):
       rsuAnime = "True"
       rsu3 = int(ru.index(i)) 
     else:
-      rsuAnime == "False"
+      rsuAnime = "False"
     if i == 18:
       rsu_nhen = "True"
       rsu4 = int(ru.index(i)) 
