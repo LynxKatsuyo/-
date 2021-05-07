@@ -60,10 +60,10 @@ def sauce(update: Update, context: CallbackContext ):
     else:
       return
   ru = []
-  rsu_1  = ru.append(int(results[0].index_id))
+  rsu_1  = ru.append(int(results[0].index_id)) 
   rsu_2 = ru.append(int(results[1].index_id))
   rsu_3 = ru.append(int(results[2].index_id))
-  rsu_4 = ru.append(int(results[4]).index_id))
+  rsu_4 = ru.append(int(results[4].index_id))
   rsu_5 = ru.append(int(results[5].index_id))
   rsu_6 = ru.append(int(results[6].index_id))
   text = " "
