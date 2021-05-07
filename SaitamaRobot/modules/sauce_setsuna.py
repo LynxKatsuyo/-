@@ -152,19 +152,20 @@ def sauce(update: Update, context: CallbackContext ):
   
   
   if anime == "True":
-    text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
+    text = f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
     
   if danboru == "True" :
     if anime == "True":
       pass 
-    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
+    text = "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
 
   if pixiv == "True":
     if anime == "True":
       pass
     if danboru == "True":
       pass 
-      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}" 
+      text =  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + f"'Similarity: {simi_pix}" 
+  
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
