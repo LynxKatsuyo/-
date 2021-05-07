@@ -118,9 +118,9 @@ def sauce(update: Update, context: CallbackContext ):
       material_dan = ik.get('material')
       source_dan = ik.get('source')
       character_dan = ik.get('characters')
-    danboru = "True" 
+    print("Danboruu retrieving successful...")
   else:
-    danboru = "False"
+    print("Danboruu either not found or retrieving unsuccessful")
     
   if rsuAnime == "True":
     raww = results[rsu3].raw
@@ -135,16 +135,12 @@ def sauce(update: Update, context: CallbackContext ):
     anime_ep = deta.get('part')
     anime_year = deta.get('year')
     anime_timestamp = deta.get('est-time')
-    anime = "True"
+    print("Anime retrieving successful...")
   else:
-    anime = "False"
+    print("Anime not found or retrieving unsuccessful")
   
   if rsupix == "True" :
-     url_pix = " ".join(results[rsu2].urls)
-     if danboruu == "True":
-       pass 
-     if anime == "True":
-       pass
+     url_pix = " ".join(results[rsu2].urls) 
      simi_pix = str(results[rsu2].similarity) 
      tex_pix = str(results[rsu2].title)
      kek = results[rsu2].raw
@@ -152,16 +148,17 @@ def sauce(update: Update, context: CallbackContext ):
      if not ti == 'None':
        mem_pix = ti.get('member_name')
      pixiv = "True" 
+     print("Pixiv retrieving successful...")
   else:
-     pixiv = "False"
+     print("Pixiv not found or retrieving unsuccessful")
   
   
   if rsuAnime == "True":
-    text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
+    text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *\n\n"
     print(text)
     
   if rsudan == "True" :
-    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + " " + "*Similarity: " + " " + f"{dan_simi}*" 
+    text += "*Title:*" + " " + f"*{tex_dan}*" + " " + "\n\n*Creator:*" + " " +  f"*{creator_dan}*" + "\n\n*Material:*" + " " + f" *{material_dan}*" + "\n\n*Character:*" + " " + f"*{character_dan}*" + "\n\n" + "*Similarity: " + " " + f"{dan_simi}*" 
     print(text)
 
   if rsupix == "True":
