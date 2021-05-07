@@ -57,6 +57,7 @@ def sauce(update: Update, context: CallbackContext ):
       dl = file.download(filename_photo)
       oo = open(dl, 'rb')
       results = sauce.from_file(oo)
+      os.remove(dl)
     elif gif == "True" :
       file = bot.get_file(gif_id)
       dl = file.download(filename_gif)
@@ -65,6 +66,8 @@ def sauce(update: Update, context: CallbackContext ):
       tu = cv2.imwrite("Sc2.jpg", frame)
       oo = open(tu, 'wb')
       results = sauce.from_file(oo)
+      cam.release() 
+      os.remove(dl)
     else:
       return
   ru = []
