@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao 
-import jikanpy
+from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
 from SaitamaRobot import dispatcher 
