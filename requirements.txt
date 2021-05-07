@@ -34,3 +34,4 @@ nekos.py
 saucenao_api 
 random2
 opencv-python
+telegraph 
