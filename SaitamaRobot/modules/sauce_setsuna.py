@@ -66,7 +66,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_3 = int(results[2].index_id)
   rsu_4 = int(results[3].index_id) 
   rsu_5 = int(results[4].index_id)
-  rsu_6 = int(results[5]).index_id) 
+  rsu_6 = int(results[5].index_id) 
   text = " "
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
