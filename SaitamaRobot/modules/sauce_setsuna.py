@@ -152,7 +152,7 @@ def sauce(update: Update, context: CallbackContext ):
     if danboruu == "True":
       pass 
       text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n\n" +  "*Artist:*" + " " + f"*{mem_pix}*" + "'Similarity: " + ""
-  if text = " ":
+  if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
   #buttons made here 
   keybo = []
