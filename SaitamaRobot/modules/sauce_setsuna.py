@@ -111,7 +111,7 @@ def sauce(update: Update, context: CallbackContext ):
     danboru = "False"
     
   if rsupix == "True" :
-     simi_pix == str(results[rsu2].similarity) 
+     simi_pix = str(results[rsu2].similarity) 
      tex_pix = str(results[rsu2].title)
      url_pix = " ".join(results[rsu2].urls)
      kek = results[rsu2].raw
