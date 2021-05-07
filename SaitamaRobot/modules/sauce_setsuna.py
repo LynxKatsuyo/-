@@ -69,7 +69,7 @@ def sauce(update: Update, context: CallbackContext ):
   markup = " "
   tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
   for i in ru:
-    rsu, rsu2, rsu3, rsu4, rsu5 = int, int, int, int, int
+    rsu, rsu2, rsu3, rsu4, rsu5 = " ", " ", " ", " ", " "
     if i == 9:
       rsudan = "True"
       rsu = int(ru.index(i)) 
@@ -79,7 +79,7 @@ def sauce(update: Update, context: CallbackContext ):
       rsupix = "True"
       rsu2 = int(ru.index(i)) 
     else:
-      rsupix = "True"
+      rsupix = "False"
     if i == 21:
       rsuAnime = "True"
       rsu3 = int(ru.index(i)) 
@@ -111,18 +111,6 @@ def sauce(update: Update, context: CallbackContext ):
   else:
     danboru = "False"
     
-  if rsupix == "True" :
-     simi_pix = str(results[rsu2].similarity) 
-     tex_pix = str(results[rsu2].title)
-     url_pix = " ".join(results[rsu2].urls)
-     kek = results[rsu2].raw
-     ti = kek.get('data')
-     if not ti == 'None':
-       mem_pix = ti.get('member_name')
-     pixiv = "True" 
-  else:
-     pass
-  
   if rsuAnime == "True":
     raww = results[rsu4].raw
     anime_url = results[rsu4].urls
@@ -139,6 +127,23 @@ def sauce(update: Update, context: CallbackContext ):
     anime = "True"
   else:
     pass
+  
+  if rsupix == "True" :
+     url_pix = " ".join(results[rsu2].urls)
+     if danboruu == "True":
+       pass 
+     if anime == "True":
+       pass
+     simi_pix = str(results[rsu2].similarity) 
+     tex_pix = str(results[rsu2].title)
+     kek = results[rsu2].raw
+     ti = kek.get('data')
+     if not ti == 'None':
+       mem_pix = ti.get('member_name')
+     pixiv = "True" 
+  else:
+     pass
+  
   
   if anime == "True":
     text += f"*Title: {anime_title}\n    Episode: {anime_ep} \n    Year Released: {anime_year} \n     Timestamp: {anime_timestamp} *"
