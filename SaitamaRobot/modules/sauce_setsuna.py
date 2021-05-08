@@ -39,7 +39,7 @@ def sauce(update: Update, context: CallbackContext ):
     return
   photo = "False"
   gif = "False"
-  m = msg.reply_text("Where is my frying pan.. Ahh!! Hot Sauce-ing now!!")
+  m = msg.reply_text("Where is my frying pan.. Ahh!! Hot Sauce-ing now!!", reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text = "(^_-)", callback_data = "Nah")]]))
   if reply:
     if reply.photo:
       photo_id = reply.photo[-1].file_id
@@ -71,10 +71,6 @@ def sauce(update: Update, context: CallbackContext ):
         nyah = cv2.VideoCapture(dl)
         heh, nyo = nyah.read()
         cv2.imwrite("nyah.png", nyo)
-        kek = open("nyah.png", 'rb')
-        bot.send_photo(chat.id, photo =kek ,reply_to_message_id = msg.message_id)
-        #hehe = keko(kek)
-        #link = f"https://telegra.ph{hehe[0]}"
         results = sauce.from_file(open("nyah.png", 'rb')) 
         nyah.release()
         os.remove(dl)
@@ -242,12 +238,17 @@ def sauce(update: Update, context: CallbackContext ):
   if rsudan == "True":
     keybo.append([InlineKeyboardButton(text = "Danboru", url = url_dan)])
   if rsuAnime == "True":
-    keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url), InlineKeyboardButton(text = "MAL", url = mal_url)])
+    if not mal_url == "False":
+      keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url), InlineKeyboardButton(text = "MAL", url = mal_url)])
+    else:
+      keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if len(keybo) >= 0:
     markup = InlineKeyboardMarkup(keybo)
-    m.edit_text(text = text, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
+    m.delete()
+    msg.reply_text(text = text, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
   else:
-    m.edit_text(text, parse_mode = ParseMode.MARKDOWN)
+    m.delete()
+    msg.reply_text(text, parse_mode = ParseMode.MARKDOWN)
      
  
 __help__ = """
