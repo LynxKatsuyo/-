@@ -68,8 +68,8 @@ def sauce(update: Update, context: CallbackContext ):
         file = bot.get_file(gif_id)
         dl = file.download(filename_gif)
         meow = nyah(dl)
-        bot.send_message(chat.id, text = f"https://telegra.ph/{meow[0]}")
-        results = sauce.from_url(f"https://telegra.ph/{meow[0]}")
+        bot.send_message(chat.id, text = f"https://telegra.ph{meow[0]}")
+        results = sauce.from_url(f"https://telegra.ph{meow[0]}")
       #except Exception:
         #m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
     else:
