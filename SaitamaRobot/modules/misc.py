@@ -45,14 +45,14 @@ def upload_telegraph(update: Update, context: CallbackContext):
       dl = file.download("nepo.jpg")
       kek = nyah(dl)
       link = f"https://telegra.ph{kek[0]}"
-      msg.reply_text(link)
+      msg.reply_text(f"Your Link:  `{link}`", reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text ="Go! Check it!", url = link)]]))
       os.remove("nepo.jpg")
     elif reply.animation:
       file = bot.get_file(reply.animation.file_id)
       dl = file.download("nepo.mp4")
       kek = nyah(dl)
       link = f"https://telegra.ph{kek[0]}"
-      msg.reply_text(link)
+      msg.reply_text(f"Your Link: `{link} `", reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text ="Go! Check it!", url = link)]]))
       os.remove("nepo.mp4")
     elif reply.video:
       if reply.video.file_size >= 4:
@@ -60,7 +60,7 @@ def upload_telegraph(update: Update, context: CallbackContext):
         dl = file.download("nwp.mp4")
         kek = nyah(dl)
         link = f"https://telegra.ph{kek[0]}"
-        msg.reply_text(link)
+        msg.reply_text(f"Your Link: `{link}`", reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text =" Go! Check it!", url = link)]]))
         os.remove("nwp.mp4")
       else:
         msg.reply_text("_Nyo_ videos bigger than 4mb supported!!")
