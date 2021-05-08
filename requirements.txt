@@ -33,5 +33,5 @@ cachetools
 nekos.py
 saucenao_api 
 random2
-opencv-headless-python
+opencv-python-headless 
 telegraph 
