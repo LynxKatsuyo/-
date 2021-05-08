@@ -71,7 +71,7 @@ def sauce(update: Update, context: CallbackContext ):
         nyah = cv2.VideoCapture(dl)
         frame = nyah.read()
         tu = cv2.imwrite("Sc2.jpg", frame)
-        results sauce.from_file(open(tu, 'rb'))
+        results = sauce.from_file(open(tu, 'rb'))
         nyah.release()
         os.remove(dl)
       #except Exception:
