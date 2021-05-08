@@ -1,7 +1,7 @@
 from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot import dispatcher
-
+from telegraph import upload_file as nyah
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode, Update
 from telegram.ext.dispatcher import run_async
@@ -31,7 +31,40 @@ This will create two buttons on a single line, instead of one button per line.
 Keep in mind that your message <b>MUST</b> contain some text other than just a button!
 """
 
-
+@run_async
+def upload_telegraph(update: Update, context: CallbackContext):
+  msg = update.effective_message 
+  user = update.effective_user 
+  chat = update.effective_chat 
+  reply = msg.reply_to_message
+  if reply:
+    if reply.photo:
+      file = bot.get_file(reply.photo[-1].file_id)
+      dl = file.download("nepo.jpg")
+      kek = nyah(dl)
+      link = f"https://telegra.ph{kek[0]}"
+      msg.reply_text(link)
+      os.remove("nepo.jpg")
+    elif reply.animation:
+      file = bot.get_file(reply.animation.file_id)
+      dl = file.download("nepo.mp4")
+      kek = nyah(dl)
+      link = f"https://telegra.ph{kek[0]}"
+      msg.reply_text(link)
+      os.remove("nepo.mp4")
+    elif reply.video:
+      if reply.video.file_size >= 4:
+        file = bot.get_file(reply.video.file_id)
+        dl = file.download("nwp.mp4")
+        kek = nyah(dl)
+        link = f"https://telegra.ph{kek[0]}"
+        msg.reply_text(link)
+        os.remove("nwp.mp4")
+      else:
+        msg.reply_text("_Nyo_ videos bigger than 4mb supported!!")
+    else:
+      msg.reply_text("Ahh, its works on, image, gifs, and videos shorter than 4mb")
+      
 @run_async
 @user_admin
 def echo(update: Update, context: CallbackContext):
@@ -101,12 +134,14 @@ Output: `1.0 USD = 75.505 INR`
 
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help)
+TM_HANDLER = DisableAbleCommandHandler("tm", upload_telegraph)
 
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
+dispatcher.add_handler(TM_HANDLER)
 
 __mod_name__ = "Extras"
-__command_list__ = ["id", "echo"]
+__command_list__ = ["id", "echo", "tm"]
 __handlers__ = [
     ECHO_HANDLER,
     MD_HELP_HANDLER,
