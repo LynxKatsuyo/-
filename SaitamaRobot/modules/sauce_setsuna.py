@@ -70,8 +70,8 @@ def sauce(update: Update, context: CallbackContext ):
         dl = file.download(filename_gif)
         nyah = cv2.VideoCapture(dl)
         frame = nyah.read()
-        tu = cv2.imwrite("Sc2.jpg", frame)
-        results = sauce.from_file(open(tu, 'rb'))
+        cv2.imwrite("nyah.jpg", frame)
+        results = sauce.from_file(open("nyah.jpg", 'rb'))
         nyah.release()
         os.remove(dl)
       #except Exception:
