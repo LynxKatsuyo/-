@@ -65,7 +65,6 @@ def sauce(update: Update, context: CallbackContext ):
       results = sauce.from_file(oo)
       os.remove(dl)
     elif gif == "True" :
-      try:
         file = bot.get_file(gif_id)
         dl = file.download(filename_gif)
         meow = nyah(dl)
