@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
-#import cv2
+from telegraph import upload_file as nyah
 from jikanpy import Jikan
 from saucenao_api.params import DB
 import os
@@ -33,12 +33,12 @@ def sauce(update: Update, context: CallbackContext ):
   reply = msg.reply_to_message
   filename_photo = "saucey.png"
   filename_gif = "saucey.gif" 
-  bot.send_chat_action(chat.id, action = 'typing')
   if not reply:
     msg.reply_text("Reply to something baka...")
     return
   photo = "False"
   gif = "False"
+  m = msg.reply_text("Where is my frying pan.. Ahh!! Hot Sauce-ing now!!")
   if reply:
     if reply.photo:
       photo_id = reply.photo[-1].file_id
@@ -46,11 +46,17 @@ def sauce(update: Update, context: CallbackContext ):
     elif reply.animation:
       gif_id = reply.animation.file_id
       gif = "True" 
+    elif reply.video:
+      if reply.video.file_size >= 5:
+        gif_id = reply.video.file_id
+        gif = "True"
+      else:
+        m.edit_text("Ahh That is too big for setsuna, give a small sized one Nya!!")
     elif reply.sticker:
       photo_id = reply.sticker.file_id
       photo = "True" 
     else:
-      bot.send_message(chat_id = chat, text = "Nyah!!, give a gif, photo or a sticker!! ", reply_to_message_id = msg_id)
+      m.edit_text("Nyah!!, give a gif, photo or a sticker!! ")
       return
     if photo == "True":
       file = bot.get_file(photo_id)
@@ -59,15 +65,13 @@ def sauce(update: Update, context: CallbackContext ):
       results = sauce.from_file(oo)
       os.remove(dl)
     elif gif == "True" :
-      file = bot.get_file(gif_id)
-      dl = file.download(filename_gif)
-      cam = cv2.VideoCapture(dl)
-      frame = cam.read()
-      tu = cv2.imwrite("Sc2.jpg", frame)
-      oo = open(dl, 'rb')
-      results = sauce.from_file(oo)
-      cam.release() 
-      os.remove(dl)
+      try:
+        file = bot.get_file(gif_id)
+        dl = file.download(filename_gif)
+        meow = nyah(dl)
+        results = sauce.from_url(f"https://telegra.ph/{meow[0]})
+      except Exception:
+        m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
     else:
       return
   ru = []
@@ -79,7 +83,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsu_6 = int(results[5].index_id) 
   text = " "
   markup = " "
-  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep, vid_url, vid_ep, vid_title, vid_year, vid_timestamp, vid_source= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
+  tex_dan, url_dan, material_dan, creator_dan, source_dan, character_dan, tex_pix, mem_pix, url_pix,  anime_url, anime_title,  dan_simi, simi_pix, anime_year, anime_ep= " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "
   mal_url = "False"
   rsudan = "False"
   rsupix = "False"
@@ -147,17 +151,6 @@ def sauce(update: Update, context: CallbackContext ):
     rsu3 = 5
   else:
     print("Not found on Anime..")
-  
-  vid = "False"
-  if isinstance(results[0], VideoSauce):
-    vid_title = results[0].title 
-    vid_ep = results[0].part
-    vid_year = results[0].year
-    rl = results[0].urls
-    vid_url =" ".join(rl) 
-    vid_source = results[0].index_name
-    vid_timestamp = results[0].est_time
-    vid = "True"
     
   if rsudan == "True" :
     dan_simi = str(results[rsu].similarity)
@@ -215,14 +208,9 @@ def sauce(update: Update, context: CallbackContext ):
      print("Pixiv retrieving successful...")
   else:
      print("Pixiv not found or retrieving unsuccessful")
-  
-  if vid == "True":
-    if rsuAnime == "True":
-      pass 
-    text += f"*Title: {vid_title}\n\nEpisode: {vid_ep} \nYear: {vid_year} \nTimestamp: {vid_timestamp}*"
     
   if rsuAnime == "True":
-    text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp: {anime_timestamp} *\n\n"
+    text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp:* `{anime_timestamp}` \n\n"
     print(text)
     
   if rsudan == "True" :
@@ -232,9 +220,10 @@ def sauce(update: Update, context: CallbackContext ):
   if rsupix == "True":
     if rsuAnime == "True":
       pass
-    if rsudan == "True":
+    elif rsudan == "True":
       pass 
-    text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n" +  "*Artist:*" + " " + f"*{mem_pix}*\n" + f"*Similarity: {simi_pix}*"
+    else:
+      text +=  "*Title:*" + " " + f"*{tex_pix}*" + "\n" +  "*Artist:*" + " " + f"*{mem_pix}*\n" + f"*Similarity: {simi_pix}*"
   
   if text == " ":
     text = "Sorry Not found!!, Setsuna sad... reeeee"
@@ -252,9 +241,9 @@ def sauce(update: Update, context: CallbackContext ):
     keybo.append([InlineKeyboardButton(text = vid_source, url = vid_url)])
   if len(keybo) >= 0:
     markup = InlineKeyboardMarkup(keybo)
-    bot.send_message(chat.id, text = text, reply_to_message_id = msg_id, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
+    m.edit_text(text = text, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
   else:
-    msg.reply_text(text, parse_mode = ParseMode.MARKDOWN)
+    m.edit_text(text, parse_mode = ParseMode.MARKDOWN)
      
  
 __help__ = """
