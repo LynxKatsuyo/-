@@ -234,11 +234,7 @@ def sauce(update: Update, context: CallbackContext ):
   if rsudan == "True":
     keybo.append([InlineKeyboardButton(text = "Danboru", url = url_dan)])
   if rsuAnime == "True":
-    keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
-  if not mal_url == "False":
-    keybo.append([InlineKeyboardButton(text = "MAL", url = mal_url)])
-  if not vid_url == " ":
-    keybo.append([InlineKeyboardButton(text = vid_source, url = vid_url)])
+    keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url), InlineKeyboardButton(text = "MAL", url = mal_url)])
   if len(keybo) >= 0:
     markup = InlineKeyboardMarkup(keybo)
     m.edit_text(text = text, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
