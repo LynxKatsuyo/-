@@ -71,8 +71,9 @@ def sauce(update: Update, context: CallbackContext ):
         nyah = cv2.VideoCapture(dl)
         heh, nyo = nyah.read()
         cv2.imwrite("nyah.jpg", nyo)
-        msg.reply_photo(chat.id, photo = "nyah.jpg")
-        results = sauce.from_file(open("nyah.jpg", 'rb'))
+        bot.send_photo(chat.id, photo = "nyah.jpg",reply_to_message_id = msg.message_id)
+        tu = open("nyah.jpg", 'rb')
+        results = sauce.from_file(tu) 
         nyah.release()
         os.remove(dl)
       #except Exception:
