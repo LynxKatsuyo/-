@@ -70,8 +70,8 @@ def sauce(update: Update, context: CallbackContext ):
         dl = file.download(filename_gif)
         meow = nyah(dl)
         results = sauce.from_url(f"https://telegra.ph/{meow[0]}")
-      except Exception:
-        m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
+      #except Exception:
+        #m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
     else:
       return
   ru = []
