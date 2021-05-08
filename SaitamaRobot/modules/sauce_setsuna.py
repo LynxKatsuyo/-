@@ -77,7 +77,6 @@ def sauce(update: Update, context: CallbackContext ):
         #link = f"https://telegra.ph{hehe[0]}"
         results = sauce.from_file(open("nyah.png", 'rb')) 
         nyah.release()
-        os.remove("nyah.jpg")
         os.remove(dl)
       #except Exception:
         #m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
