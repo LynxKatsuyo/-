@@ -56,7 +56,7 @@ def upload_telegraph(update: Update, context: CallbackContext):
       msg.reply_text(f"*Your Link:* \n\n `{link} `", reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text ="Go! Check it!", url = link)]]), parse_mode = ParseMode.MARKDOWN)
       os.remove("nepo.mp4")
     elif reply.video:
-      if reply.video.file_size >= 4:
+      if reply.video.file_size <= 4:
         file = bot.get_file(reply.video.file_id)
         dl = file.download("nwp.mp4")
         kek = nyah(dl)
