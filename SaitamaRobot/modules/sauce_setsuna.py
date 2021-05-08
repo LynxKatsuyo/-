@@ -1,6 +1,7 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
 from telegraph import upload_file as nyah
 from jikanpy import Jikan
+import cv2
 from saucenao_api.params import DB
 import os
 from SaitamaRobot import dispatcher 
@@ -67,9 +68,12 @@ def sauce(update: Update, context: CallbackContext ):
     elif gif == "True" :
         file = bot.get_file(gif_id)
         dl = file.download(filename_gif)
-        meow = nyah(dl)
-        bot.send_message(chat.id, text = f"https://telegra.ph{meow[0]}")
-        results = sauce.from_url(f"https://telegra.ph{meow[0]}")
+        nyah = cv2.VideoCapture(dl)
+        frame = nyah.read()
+        tu = cv2.imwrite("Sc2.jpg", frame)
+        results sauce.from_file(open(tu, 'rb'))
+        nyah.release()
+        os.remove(dl)
       #except Exception:
         #m.edit_text("Ahh its too big!!, Setsuna cant hanlde it Nya!")
     else:
