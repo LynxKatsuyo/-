@@ -33,10 +33,12 @@ Keep in mind that your message <b>MUST</b> contain some text other than just a b
 
 @run_async
 def upload_telegraph(update: Update, context: CallbackContext):
+  bot = context.bot 
   msg = update.effective_message 
   user = update.effective_user 
   chat = update.effective_chat 
   reply = msg.reply_to_message
+  bot.send_chat_action(chat.id, action='typing')
   if reply:
     if reply.photo:
       file = bot.get_file(reply.photo[-1].file_id)
