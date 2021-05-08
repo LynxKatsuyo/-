@@ -72,10 +72,10 @@ def sauce(update: Update, context: CallbackContext ):
         heh, nyo = nyah.read()
         cv2.imwrite("nyah.png", nyo)
         kek = open("nyah.png", 'rb')
-        hehe = keko(kek)
-        link = f"https://telegra.ph{hehe[0]}"
         bot.send_photo(chat.id, photo =kek ,reply_to_message_id = msg.message_id)
-        results = sauce.from_url(link) 
+        #hehe = keko(kek)
+        #link = f"https://telegra.ph{hehe[0]}"
+        results = sauce.from_file(open("nyah.png", 'rb')) 
         nyah.release()
         os.remove("nyah.jpg")
         os.remove(dl)
