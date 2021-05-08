@@ -1,5 +1,5 @@
 from saucenao_api import SauceNao, VideoSauce, BookSauce
-from telegraph import upload_file as nyah
+from telegraph import upload_file as keko
 from jikanpy import Jikan
 import cv2
 from saucenao_api.params import DB
@@ -72,8 +72,10 @@ def sauce(update: Update, context: CallbackContext ):
         heh, nyo = nyah.read()
         cv2.imwrite("nyah.png", nyo)
         oo = open("nyah.png", 'rb')
+        hehe = keko(oo)
+        link = f"https://telegra.ph{hehe[0]}"
         bot.send_photo(chat.id, photo = oo ,reply_to_message_id = msg.message_id)
-        results = sauce.from_file(oo) 
+        results = sauce.from_url(link) 
         nyah.release()
         os.remove("nyah.jpg")
         os.remove(dl)
