@@ -187,7 +187,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
+            m = update.effective_message.reply_photo(
                 SAITAMA_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
@@ -296,7 +296,7 @@ def help_button(update, context):
                     paginate_modules(next_page + 1, HELPABLE, "help")))
 
         elif back_match:
-            query.message.edit_text(
+            m.edit_text(
                 text=HELP_STRINGS,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
