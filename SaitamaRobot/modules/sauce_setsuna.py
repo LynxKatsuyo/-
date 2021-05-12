@@ -214,7 +214,7 @@ def sauce(update: Update, context: CallbackContext ):
      print("Pixiv not found or retrieving unsuccessful")
     
   if rsuAnime == "True":
-    text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp:* `{anime_timestamp}` \n\n"
+    text += f"*Title: {anime_title}\n\nEpisode: {anime_ep} \n\nYear Released: {anime_year} \n\nTimestamp:* `{anime_timestamp}` \n\n Similarity: {simi}"
     print(text)
     
   if rsudan == "True" :
