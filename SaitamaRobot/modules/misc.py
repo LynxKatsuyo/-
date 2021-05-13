@@ -70,6 +70,7 @@ def upload_telegraph(update: Update, context: CallbackContext):
         msg.reply_text("_Nyo_ videos bigger than 4mb supported!!", parse_mode = ParseMode.MARKDOWN)
     else:
       msg.reply_text("Ahh, its works on, image, gifs, and videos shorter than 4mb", parse_mode = ParseMode.MARKDOWN)
+      
 @run_async 
 def gifufinder(update: Update, context: CallbackContext):
   bot = context.bot 
@@ -87,6 +88,7 @@ def gifufinder(update: Update, context: CallbackContext):
   r = requests.get(
     "https://g.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
   if r.status_code == 200:
+    bot.send_chat_action(chat.id, action ="upload_video")
     toper= json.loads(r.content) 
     top = toper.get('results')
     med = rdn.choice(top)
