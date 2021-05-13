@@ -1,6 +1,8 @@
 from SaitamaRobot.modules.helper_funcs.chat_status import user_admin
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 import os
+import random2 as rdn
+import requests 
 from SaitamaRobot import dispatcher
 from telegraph import upload_file as nyah
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
@@ -67,7 +69,31 @@ def upload_telegraph(update: Update, context: CallbackContext):
         msg.reply_text("_Nyo_ videos bigger than 4mb supported!!", parse_mode = ParseMode.MARKDOWN)
     else:
       msg.reply_text("Ahh, its works on, image, gifs, and videos shorter than 4mb", parse_mode = ParseMode.MARKDOWN)
-      
+@run_async 
+def gifufinder(update: Update, context: CallbackContext):
+  bot = context.bot 
+  args = context.args 
+  msg = update.effective_message 
+  chat = update.effective_chat 
+  user = update.effective_user 
+  apikey = "K9Z3EL7WTG7R"  
+  lmt = 30
+  if args:
+    search_term = args
+  else:
+    msg.reply_text(f"Nyah! Gimme something to search {user.first_name} kun")
+    return 
+  r = requests.get(
+    "https://g.tenor.com/v1/search?q=%s&key=%s&limit=%s" % (search_term, apikey, lmt))
+  if r.status_code == 200:
+    toper= json.loads(r.content) 
+    top = toper.get('results')
+    med = rdn.choice(top)
+    gif = med['media'][0]['mp4']['url'] 
+    bot.send_animation(chat.id, animation = gif, reply_to_message_id = msg.message_id) 
+  else:
+    msg.reply_text("Looks Like api is down.., Gomenasai!!")
+     
 @run_async
 @user_admin
 def echo(update: Update, context: CallbackContext):
