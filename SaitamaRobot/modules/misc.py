@@ -164,10 +164,12 @@ Output: `1.0 USD = 75.505 INR`
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
 MD_HELP_HANDLER = CommandHandler("markdownhelp", markdown_help)
 TM_HANDLER = DisableAbleCommandHandler("tm", upload_telegraph)
+GIF_HANDLER = DisableAbleCommandHandler("gif", gifufinder)
 
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
 dispatcher.add_handler(TM_HANDLER)
+dispatcher.add_handler(GIF_HANDLER)
 
 __mod_name__ = "Extras"
 __command_list__ = ["id", "echo", "tm"]
