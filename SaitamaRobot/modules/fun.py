@@ -122,11 +122,11 @@ def pat_or_hug(update: Update, context: CallbackContext):
         user2 = mention_html(curr_user.id, curr_user.first_name) 
     pat = " "
     hug = " "
-    if msg == "/pat":
+    if msg.startswith("/pat"):
       pat = "Text"
-    elif msg == "/pat@SetsunyaBot":
+    elif msg.startswith("/pat@SetsunyaBot"):
       pat = "Text"
-    else:
+    elif msg.startswith("/hug"):
       hug = "True"
     if pat == "Text":
         temp = random.choice(fun_strings.PAT_TEMPLATES)
