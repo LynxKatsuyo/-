@@ -96,11 +96,11 @@ def slap(update: Update, context: CallbackContext):
 @run_async
 def pat_or_hug(update: Update, context: CallbackContext):
     msg = update.effective_message.text
-    if msg == "/pat":
+    if msg.startswith("/pat"):
       nek =nekos.img("pat")
-    elif msg == "/pat@SetsunyaBot":
+    elif msg.startswith("/pat@SetsunyaBot"): 
       nek = nekos.img("pat")
-    else:
+    elif msg.startswith("/hug"):
       nek = nekos.img("hug")
     bot = context.bot
     args = context.args
