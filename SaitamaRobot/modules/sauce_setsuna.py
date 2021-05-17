@@ -241,7 +241,7 @@ def sauce(update: Update, context: CallbackContext ):
       keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if not mal_url == "False":
       keybo.append([InlineKeyboardButton(text = "MAL", url = mal_url)])
-  if len(keybo) >= 0:
+  if len(keybo) >= 1:
     markup = InlineKeyboardMarkup(keybo)
     m.delete()
     msg.reply_text(text = text, reply_markup = markup, parse_mode = ParseMode.MARKDOWN)
