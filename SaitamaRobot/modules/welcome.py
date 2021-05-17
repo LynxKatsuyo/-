@@ -413,10 +413,10 @@ def new_member(update: Update, context: CallbackContext):
         if welcome_log:
             return welcome_log
 
-        return (f"{html.escape(chat.title)}\n"
-                f"#USER_JOINED\n"
-                f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
-                f"<b>ID</b>: <code>{user.id}</code>")
+        if not user.id == new_mem.id:
+          return (f"{html.escape(chat.title)}\n#USER_ADDED\n<b>Admeme</b>: {mention_html(user.id, user.first_name)} <b>User</b>: {mention_html(new_mem.id, new_mem.first_name)}\n<b>ID</b>: <code>{user.id}</code>")
+        else:
+          return (f"{html.escape(chat.title)}\n#USER_JOINED\n<b>User: </b> {mention_html(new_mem.id, new_mem.first_name)}\n<b>ID: </b>: <code>{new_mem.id}</code>")
 
     return ""
 
