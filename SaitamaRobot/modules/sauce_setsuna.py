@@ -242,11 +242,11 @@ def sauce(update: Update, context: CallbackContext ):
   if rsudan == "True":
     if not urgel == "False":
       keybo.append([InlineKeyboardButton(text = "Danboruu", url = url_dan), InlineKeyboardButton(text = "Gelbooru", url = urgel)])
-     elif url_dan == "False":
-       if not urgel == "False":
-         keybo.append([InlineKeyboardButton(text ="Gelbooru", url = urlgel)])
-     else:
-       keybo.append([InlineKeyboardButton (text = "Danboruu", url = url_dan)])
+    elif url_dan == "False":
+      if not urgel == "False":
+        keybo.append([InlineKeyboardButton(text ="Gelbooru", url = urlgel)])
+    else:
+      keybo.append([InlineKeyboardButton (text = "Danboruu", url = url_dan)])
   if rsuAnime == "True":
       keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if not mal_url == "False":
