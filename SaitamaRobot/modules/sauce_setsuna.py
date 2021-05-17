@@ -92,6 +92,7 @@ def sauce(update: Update, context: CallbackContext ):
   rsudan = "False"
   rsupix = "False"
   rsuAnime = "False"
+  urgel = "False"
   
   if rsu_1 == 9:
     rsudan = "True"
@@ -164,7 +165,10 @@ def sauce(update: Update, context: CallbackContext ):
       urgel = urdan[1]
     except IndexError:
       pass
-    tit = urdan.pop()
+    if len(urdan) >= 2:
+      tit = urdan.pop()
+    else:
+      pass
     url_dan = " ".join(urdan)
     di = results[rsu].raw
     ik = di.get('data')
@@ -236,7 +240,13 @@ def sauce(update: Update, context: CallbackContext ):
   if rsupix == "True":
     keybo.append([InlineKeyboardButton(text = "Pixiv", url = url_pix)])
   if rsudan == "True":
-    keybo.append([InlineKeyboardButton(text = "Danboru", url = url_dan)])
+    if not urgel == "False":
+      keybo.append([InlineKeyboardButton(text = "Danboruu", url = url_dan), InlineKeyboardButton(text = "Gelbooru", url = urgel)])
+     elif url_dan == "False":
+       if not urgel == "False":
+         keybo.append([InlineKeyboardButton(text ="Gelbooru", url = urlgel)])
+     else:
+       keybo.append([InlineKeyboardButton (text = "Danboruu", url = url_dan)])
   if rsuAnime == "True":
       keybo.append([InlineKeyboardButton(text = "Anime-db", url = anime_url)])
   if not mal_url == "False":
