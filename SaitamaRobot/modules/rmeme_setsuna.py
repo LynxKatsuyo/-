@@ -32,6 +32,8 @@ def rmemes(update, context):
     context.bot.send_chat_action(chat.id, action="upload_photo")
 
     SUBREDS = [
+        "Animemes"
+        "hentaimemes"
         "meirl",
         "dankmemes",
         "AdviceAnimals",
