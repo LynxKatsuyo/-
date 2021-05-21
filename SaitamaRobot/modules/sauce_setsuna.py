@@ -25,7 +25,7 @@ from telegram.utils.helpers import mention_html
 @run_async 
 def sauce(update: Update, context: CallbackContext ):
   results = " "
-  API = "6851aa2ae17da0042a7b02af3f7a1c55485ceafc"
+  API = "1ee746dd98d9d3f2b6f366236cb35630d270cd90"
   sauce = SauceNao(api_key=API, db = 999, numres = 6)
   bot = context.bot 
   msg = update.effective_message 
